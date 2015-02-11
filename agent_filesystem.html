@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Filesystem &mdash; Dell Cloud Manager Python Agent</title>
+    
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="next" title="agent.conf file" href="agent_config.html" />
+    <link rel="prev" title="Dell Cloud Manager Console" href="display_agent_information_from_console.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<!-- Custom Admin Guide code from page-header.html -->
+<header id="pageheader">
+<h1>    
+<a href="index.html ">Dell Cloud Manager Python Agent</a>
+</h1>
+</header>
+<!-- End of Custom Admin Guide code from page-header.html -->
+
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="display_agent_information_from_console.html" title="Previous document">Dell Cloud Manager Console</a>
+        </li>
+        <li>
+          <a href="agent_config.html" title="Next document">agent.conf file</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="filesystem">
+<span id="agent-filesystem"></span><h1>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this headline">¶</a></h1>
+<p>By default the python agent is installed in the <strong>/dcm</strong> directory.  Subdirectories include:</p>
+<ul class="simple">
+<li><strong>bin</strong> - where the agent code and bash scripts reside</li>
+<li><strong>cfg</strong> - where user customization configuration files can be stored</li>
+<li><strong>etc</strong> - where the agent&#8217;s configuration files are stored including the main configuration file <strong>agent.conf</strong></li>
+<li><strong>home</strong> - the home directory for the Linux user (e.g. <strong>dcm</strong>) that the agent runs as</li>
+<li><strong>logs</strong> - where the agent logs are stored</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre>/dcm:
+total 36
+drwxr-xr-x  8 dcm  dcm  4096 Feb 11 20:10 .
+drwxr-xr-x 24 root root 4096 Feb 11 19:40 ..
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 bin
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 cfg
+drwxr-xr-x  3 dcm  dcm  4096 Feb 11 19:40 custom
+-rw-r--r--  1 root root    5 Feb 11 20:29 dcm-agent.pid
+drwxr-xr-x  2 dcm  dcm  4096 Feb 11 20:59 etc
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 home
+drwxr-xr-x  2 dcm  dcm  4096 Feb 11 20:11 logs
+
+/dcm/bin:
+total 136
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+-r-xr-x--- 1 dcm dcm 4463 Feb 11 19:40 addUser
+-r-xr-x--- 1 dcm dcm 1596 Feb 11 19:40 assembleRaid
+-r-xr-x--- 1 dcm dcm 1048 Feb 11 19:40 closeEncryption
+-r-xr-x--- 1 dcm dcm 1093 Feb 11 19:40 common_mod
+-r-xr-x--- 1 dcm dcm 2194 Feb 11 19:40 configureRaid
+-r-xr-x--- 1 dcm dcm  664 Feb 11 19:40 dcm-configure.sh
+-r-xr-x--- 1 dcm dcm  202 Feb 11 19:40 debInstall
+-r-xr-x--- 1 dcm dcm  910 Feb 11 19:40 enstratiusinitd
+-r-xr-x--- 1 dcm dcm 1276 Feb 11 19:40 enstratiusinitd-CENTOS
+-r-xr-x--- 1 dcm dcm 2123 Feb 11 19:40 format
+-r-xr-x--- 1 dcm dcm 1201 Feb 11 19:40 getDhcpAddress
+-r-xr-x--- 1 dcm dcm  385 Feb 11 19:40 getIpAddresses
+-r-xr-x--- 1 dcm dcm  354 Feb 11 19:40 getmyIP
+-r-xr-x--- 1 dcm dcm  783 Feb 11 19:40 getUnixOs
+-r-xr-x--- 1 dcm dcm  795 Feb 11 19:40 listDevices
+-r-xr-x--- 1 dcm dcm  471 Feb 11 19:40 log
+-r-xr-x--- 1 dcm dcm 1939 Feb 11 19:40 mount
+-r-xr-x--- 1 dcm dcm 1824 Feb 11 19:40 openEncryption
+-r-xr-x--- 1 dcm dcm  514 Feb 11 19:40 README
+-r-xr-x--- 1 dcm dcm 2068 Feb 11 19:40 removeUser
+-r-xr-x--- 1 dcm dcm 3302 Feb 11 19:40 rename
+-r-xr-x--- 1 dcm dcm  169 Feb 11 19:40 rpmInstall
+-r-xr-x--- 1 dcm dcm 3176 Feb 11 19:40 runConfigurationManagement-CHEF
+-r-xr-x--- 1 dcm dcm 4669 Feb 11 19:40 runConfigurationManagement-PUPPET
+-r-xr-x--- 1 dcm dcm 1039 Feb 11 19:40 secureDelete
+-r-xr-x--- 1 dcm dcm 1949 Feb 11 19:40 setupEncryption
+-r-xr-x--- 1 dcm dcm  236 Feb 11 19:40 startup-daemon.sh
+-r-xr-x--- 1 dcm dcm 1038 Feb 11 19:40 terminate
+-r-xr-x--- 1 dcm dcm  797 Feb 11 19:40 unmount
+-r-xr-x--- 1 dcm dcm   31 Feb 11 19:40 variables.sh
+
+/dcm/cfg:
+total 8
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+
+/dcm/custom:
+total 12
+drwxr-xr-x 3 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+drwxr-xr-x 2 dcm dcm 4096 Feb 11 19:40 bin
+
+/dcm/custom/bin:
+total 8
+drwxr-xr-x 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 3 dcm dcm 4096 Feb 11 19:40 ..
+
+/dcm/etc:
+total 36
+drwxr-xr-x 2 dcm dcm  4096 Feb 11 20:59 .
+drwxr-xr-x 8 dcm dcm  4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm  2101 Feb 11 19:40 agent.conf
+-rw-r--r-- 1 dcm dcm 14336 Feb 11 20:59 agentdb.sql
+-rw-r--r-- 1 dcm dcm  1685 Feb 11 19:40 logging.yaml
+-rw-r--r-- 1 dcm dcm  2884 Feb 11 19:40 plugin.conf
+
+/dcm/home:
+total 20
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm  220 Apr  3  2012 .bash_logout
+-rw-r--r-- 1 dcm dcm 3486 Apr  3  2012 .bashrc
+-rw-r--r-- 1 dcm dcm  675 Apr  3  2012 .profile
+
+/dcm/logs:
+total 108
+drwxr-xr-x 2 dcm dcm  4096 Feb 11 20:11 .
+drwxr-xr-x 8 dcm dcm  4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm 55519 Feb 11 20:59 agent.log
+-rw-r--r-- 1 dcm dcm 37139 Feb 11 20:29 agent.log.job_runner
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/kraken.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="display_agent_information_from_console.html" title="Previous document">Dell Cloud Manager Console</a>
+        </li>
+        <li>
+          <a href="agent_config.html" title="Next document">agent.conf file</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+    
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-59252408-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+  </footer>
+  </body>
+</html>

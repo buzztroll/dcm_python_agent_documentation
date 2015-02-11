@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation Command Syntax &mdash; Dell Cloud Manager Python Agent</title>
+    
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="next" title="Interactive Install" href="interactive_install.html" />
+    <link rel="prev" title="Dell Cloud Manager Python Agent" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<!-- Custom Admin Guide code from page-header.html -->
+<header id="pageheader">
+<h1>    
+<a href="index.html ">Dell Cloud Manager Python Agent</a>
+</h1>
+</header>
+<!-- End of Custom Admin Guide code from page-header.html -->
+
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+        </li>
+        <li>
+          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-command-syntax">
+<span id="agent-installation-syntax"></span><h1>Installation Command Syntax<a class="headerlink" href="#installation-command-syntax" title="Permalink to this headline">¶</a></h1>
+<p>There are 2 ways to install the Dell Cloud Manager python agent:</p>
+<ol class="arabic simple">
+<li>Interactive mode</li>
+<li>Non-interactive mode (desired options can be specified on the command line)</li>
+</ol>
+<div class="section" id="interactive-mode">
+<h2>Interactive mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command below with root authority to install the python agent in interactive mode.</p>
+<blockquote>
+<div><p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
+<p>The curl command downloads a bash shell script named <tt class="docutils literal"><span class="pre">installer.sh</span></tt> that will install the agent, and then executes the <tt class="docutils literal"><span class="pre">installer.sh</span></tt> bash shell script.  You will be prompted for:</p>
+<ol class="arabic simple">
+<li>Cloud provider that the launched server where the python agent will be installed.</li>
+<li>Contact web socket URL string for the Dell Cloud Manager provisioning server agent manager.</li>
+</ol>
+<blockquote>
+<div>Format: wss://<strong>hostname_or_ipaddress</strong>/agentManager</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Whether or not to start the agent at system boot (default is Yes)</li>
+<li>Whether or not to install the latest Chef client (default is No)</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="non-interactive-mode">
+<h2>Non-interactive mode<a class="headerlink" href="#non-interactive-mode" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command below with root authority to install the python agent in non-interactive mode.</p>
+<blockquote>
+<div><p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">[options]</span></tt></p>
+<div class="highlight-text"><div class="highlight"><pre>Options:
+
+      -c, --cloud                cloud Provider
+                                 --------------------------------------------------------------
+                                 Amazon, Azure, Bluelock, CloudStack, CloudStack3
+                                 Eucalyptus, Google, Joyent, Konami, OpenStack, Other, UNKNOWN
+
+      -u, --url                  Web socket URL of the Dell Cloud Manager provisioning server agent manager
+                                 Format: wss://hostname_or_ipaddress/agentManager
+                                 Default: wss://dcm.enstratius.com/agentManager
+
+      -B, -on-boot               Configure the python agent to start at system boot (default)
+
+      -m, --mount-point          Mount point where DCM stores data (default /mnt/dcmdata)
+
+      -t, --tmp-path             Path to the temporary directory  (default /tmp)
+
+      -U, --user                 Linux user that the python agent will run as (default dcm)
+                                 If you specify a different user then that user must already exist.
+
+      -p, --base-path            Base path where to install the agent (default /dcm)
+
+      -L, --loglevel             Log level for logging (ERROR, WARN, INFO, DEBUG)
+
+      -l, ---logfile             Name of the python agent logfile (default agent.log)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In most cases it is not necessary to specify the <strong>-c</strong> parameter as the python agent can detect the cloud.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The default value for the web socket URL is <strong>wss://dcm.enstratius.com/agentManager</strong> which is the Dell Cloud Manager SaaS provisioning server. This needs to be changed for On-Premise environments.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/kraken.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3>This Page</h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation Command Syntax</a><ul>
+<li><a class="reference internal" href="#interactive-mode">Interactive mode</a></li>
+<li><a class="reference internal" href="#non-interactive-mode">Non-interactive mode</a></li>
+</ul>
+</li>
+</ul>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+        </li>
+        <li>
+          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+    
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-59252408-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+  </footer>
+  </body>
+</html>

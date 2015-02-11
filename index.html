@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dell Cloud Manager Python Agent &mdash; Dell Cloud Manager Python Agent</title>
+    
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Dell Cloud Manager Python Agent" href="#" />
+    <link rel="next" title="Installation Command Syntax" href="agent_install_syntax.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<!-- Custom Admin Guide code from page-header.html -->
+<header id="pageheader">
+<h1>    
+<a href="# ">Dell Cloud Manager Python Agent</a>
+</h1>
+</header>
+<!-- End of Custom Admin Guide code from page-header.html -->
+
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="#">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dell-cloud-manager-python-agent">
+<h1>Dell Cloud Manager Python Agent<a class="headerlink" href="#dell-cloud-manager-python-agent" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Dell Cloud Manager python agent is a lightweight application written in python that communicates with the Dell Cloud Manager provisioning server and provides enhanced automation and management capabilities.
+The python agent is only supported on Linux virtual machines. When it is installed on a Linux virtual machine that is launched from Dell Cloud manager it provides functions such as:</p>
+<ul class="simple">
+<li>Server health monitoring</li>
+<li>Automated software installation/configuration</li>
+<li>Data set installations</li>
+<li>Backups</li>
+<li>Disk volume management</li>
+</ul>
+<p>The Dell Cloud Manager python agent also contains a set of associated Bash scripts that are responsible for executing some actions on the server and are extensible by end users.</p>
+<p>All communication between the python agent and the Dell Cloud Manager provisioning server is initiated from the python agent and is is encrypted using SSL. The python agent opens a socket connection to port 443 on the Dell Cloud Manager provisioning server and can then receive commands to be executed on the virtual machine and can respond back to the Dell Cloud Manager server using the same connection. No inbound ports on the Linux virtual machine running the python agent need to be opened.  The python agent will continuously attempt to reconnect the connection to the Dell Cloud Manager server if the connection is lost.</p>
+<p>Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a sqlite database file. Because of this the agent system can survive reboots.</p>
+<p>The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, REHL and Fedora.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/kraken.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3>This Page</h3>
+  <ul>
+<li><a class="reference internal" href="#">Dell Cloud Manager Python Agent</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+</ul>
+</li>
+</ul>
+
+<h3><a href="#">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="#">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+    
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-59252408-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+  </footer>
+  </body>
+</html>

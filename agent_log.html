@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>agent.log file &mdash; Dell Cloud Manager Python Agent</title>
+    
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="prev" title="agent.conf file" href="agent_config.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<!-- Custom Admin Guide code from page-header.html -->
+<header id="pageheader">
+<h1>    
+<a href="index.html ">Dell Cloud Manager Python Agent</a>
+</h1>
+</header>
+<!-- End of Custom Admin Guide code from page-header.html -->
+
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="agent_config.html" title="Previous document">agent.conf file</a>
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="agent-log-file">
+<span id="agent-log"></span><h1>agent.log file<a class="headerlink" href="#agent-log-file" title="Permalink to this headline">¶</a></h1>
+<p>By default the path to the python agent log is <strong>/dcm/logs/agent.log</strong>.</p>
+<p>This message in the log indicates a successful connection to the agentManager component running in the Dell Cloud Manager provisioning server:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">INFO</span> <span class="pre">2015-02-11</span> <span class="pre">20:11:01,529</span> <span class="pre">[dcm.agent.log.to.agent.manager]</span> <span class="pre">utils.py:282</span> <span class="pre">[(REQUEST=None)]</span> <span class="pre">A</span> <span class="pre">handshake</span> <span class="pre">was</span> <span class="pre">successful,</span> <span class="pre">starting</span> <span class="pre">the</span> <span class="pre">workers</span></tt></div></blockquote>
+<div class="highlight-text"><div class="highlight"><pre>INFO 2015-02-11 20:11:00,539 [dcm.agent.cmd.service] service.py:60 [(REQUEST=None)] Using DB /dcm/etc/agentdb.sql
+INFO 2015-02-11 20:11:00,587 [dcm.agent.longrunners] longrunners.py:60 [(REQUEST=None)] Job runner Thread-3 thread starting.
+INFO 2015-02-11 20:11:00,797 [dcm.agent.connection.websocket] websocket.py:121 [(REQUEST=None)] Attempting to connect to wss://66.57.3.53/agentManager
+INFO 2015-02-11 20:11:01,528 [dcm.agent.cmd.service] service.py:122 [(REQUEST=None)] Incoming handshake {u&#39;message&#39;: u&#39;Success&#39;, u&#39;handshake&#39;: {u&#39;cloudId&#39;: 1, u&#39;serverName&#39;: u&#39;GForghetti-Agent&#39;, u&#39;regionId&#39;: u&#39;us-east-1&#39;, u&#39;zoneId&#39;: u&#39;us-east-1a&#39;, u&#39;version&#39;: u&#39;103&#39;, u&#39;pk&#39;: None, u&#39;mountPoint&#39;: u&#39;/mnt&#39;, u&#39;serverId&#39;: u&#39;i-ce752c3f&#39;, u&#39;agentID&#39;: u&#39;a3331706-2f3a-4f53-b4b5-322204ea268c-2015_02_11_20_11_01-93&#39;, u&#39;customerId&#39;: 200}, u&#39;return_code&#39;: 200}
+INFO 2015-02-11 20:11:01,528 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=None)] Clean up any bad residue in the db
+<span class="hll">INFO 2015-02-11 20:11:01,529 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=None)] A handshake was successful, starting the workers
+</span>INFO 2015-02-11 20:11:01,529 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=None)] Starting 1 workers.
+INFO 2015-02-11 20:11:01,530 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=None)] Worker Thread-6 thread starting.
+INFO 2015-02-11 20:11:06,631 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Creating a request ID a5d56c49-6193-4584-bf20-0c92f2636676
+INFO 2015-02-11 20:11:06,636 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Incoming request for command initialize
+WARNING 2015-02-11 20:11:06,650 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] The argument password was sent from the agent manager but is not understood by this command.
+INFO 2015-02-11 20:11:06,651 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Starting job for command initialize a5d56c49-6193-4584-bf20-0c92f2636676
+INFO 2015-02-11 20:11:06,651 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Renaming the host to GForghetti-Agent
+INFO 2015-02-11 20:11:07,713 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] [rename] [rename GForghetti-Agent 10.29.59.177]
+
+INFO 2015-02-11 20:11:07,713 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] [rename] [hostname updated in /etc/hosts]
+
+INFO 2015-02-11 20:11:07,714 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Create the temporary directory
+INFO 2015-02-11 20:11:07,714 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Adding the user
+INFO 2015-02-11 20:11:08,230 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] [running c200 c200 Customer Account false]
+
+INFO 2015-02-11 20:11:08,230 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] [addUser] [addUser c200 c200 Customer Account false]
+
+INFO 2015-02-11 20:11:08,231 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Completed successfully job initialize a5d56c49-6193-4584-bf20-0c92f2636676
+INFO 2015-02-11 20:11:08,231 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Task done job a5d56c49-6193-4584-bf20-0c92f2636676
+INFO 2015-02-11 20:11:08,231 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Reply message sent for command initialize
+INFO 2015-02-11 20:11:08,252 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=a5d56c49-6193-4584-bf20-0c92f2636676)] Resending reply to a5d56c49-6193-4584-bf20-0c92f2636676
+INFO 2015-02-11 20:11:08,492 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Creating a request ID 2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707
+INFO 2015-02-11 20:11:08,495 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Incoming request for command add_user
+WARNING 2015-02-11 20:11:08,540 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] The argument customerId was sent from the agent manager but is not understood by this command.
+INFO 2015-02-11 20:11:08,540 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Starting job for command add_user 2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707
+INFO 2015-02-11 20:11:09,559 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] [running p010 p010 Gary Forghetti true /tmp/tmpe9zw7s/p010.pub]
+
+INFO 2015-02-11 20:11:09,559 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] [addUser] [addUser p010 p010 Gary Forghetti true]
+
+INFO 2015-02-11 20:11:10,076 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Completed successfully job add_user 2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707
+INFO 2015-02-11 20:11:10,076 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Task done job 2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707
+INFO 2015-02-11 20:11:10,076 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Reply message sent for command add_user
+INFO 2015-02-11 20:11:10,127 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707)] Resending reply to 2b46dfcc-7e3c-41d9-8ecc-c16e54f8f707
+INFO 2015-02-11 20:11:10,545 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=a4821ace-7623-4708-bea2-9193fb12406d)] Creating a request ID a4821ace-7623-4708-bea2-9193fb12406d
+INFO 2015-02-11 20:29:24,127 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Incoming request for command list_devices
+INFO 2015-02-11 20:29:24,140 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Starting job for command list_devices 80166f56-6fd2-4589-bf52-73f3c5e5241e
+INFO 2015-02-11 20:29:24,655 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Completed successfully job list_devices 80166f56-6fd2-4589-bf52-73f3c5e5241e
+INFO 2015-02-11 20:29:24,656 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Task done job 80166f56-6fd2-4589-bf52-73f3c5e5241e
+INFO 2015-02-11 20:29:24,656 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Reply message sent for command list_devices
+INFO 2015-02-11 20:29:24,675 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=80166f56-6fd2-4589-bf52-73f3c5e5241e)] Resending reply to 80166f56-6fd2-4589-bf52-73f3c5e5241e
+INFO 2015-02-11 20:31:51,122 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Creating a request ID 7c3c31e2-1383-4eee-9ae6-472b7357be4f
+INFO 2015-02-11 20:31:51,126 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Incoming request for command heartbeat
+INFO 2015-02-11 20:31:51,138 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Starting job for command heartbeat 7c3c31e2-1383-4eee-9ae6-472b7357be4f
+INFO 2015-02-11 20:31:51,139 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Completed successfully job heartbeat 7c3c31e2-1383-4eee-9ae6-472b7357be4f
+INFO 2015-02-11 20:31:51,139 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Task done job 7c3c31e2-1383-4eee-9ae6-472b7357be4f
+INFO 2015-02-11 20:31:51,139 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:31:51,140 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Creating a request ID ebb060e6-b2db-498c-8f6d-2a72e0ff7b62
+INFO 2015-02-11 20:31:51,143 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:31:51,155 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Starting job for command get_agent_data ebb060e6-b2db-498c-8f6d-2a72e0ff7b62
+INFO 2015-02-11 20:31:51,168 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=7c3c31e2-1383-4eee-9ae6-472b7357be4f)] Resending reply to 7c3c31e2-1383-4eee-9ae6-472b7357be4f
+INFO 2015-02-11 20:31:51,271 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Completed successfully job get_agent_data ebb060e6-b2db-498c-8f6d-2a72e0ff7b62
+INFO 2015-02-11 20:31:51,272 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Task done job ebb060e6-b2db-498c-8f6d-2a72e0ff7b62
+INFO 2015-02-11 20:31:51,273 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:31:51,292 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=ebb060e6-b2db-498c-8f6d-2a72e0ff7b62)] Resending reply to ebb060e6-b2db-498c-8f6d-2a72e0ff7b62
+INFO 2015-02-11 20:33:36,163 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Creating a request ID 8ab6b3d5-654b-4e68-9598-c408643fe9e9
+INFO 2015-02-11 20:33:36,167 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:33:36,179 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Starting job for command get_agent_data 8ab6b3d5-654b-4e68-9598-c408643fe9e9
+INFO 2015-02-11 20:33:36,188 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Creating a request ID 42d7c451-0cc9-426e-ae1c-e7f50dfbc167
+INFO 2015-02-11 20:33:36,192 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Incoming request for command heartbeat
+INFO 2015-02-11 20:33:36,280 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Completed successfully job get_agent_data 8ab6b3d5-654b-4e68-9598-c408643fe9e9
+INFO 2015-02-11 20:33:36,280 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Task done job 8ab6b3d5-654b-4e68-9598-c408643fe9e9
+INFO 2015-02-11 20:33:36,281 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:33:36,281 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Starting job for command heartbeat 42d7c451-0cc9-426e-ae1c-e7f50dfbc167
+INFO 2015-02-11 20:33:36,281 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Completed successfully job heartbeat 42d7c451-0cc9-426e-ae1c-e7f50dfbc167
+INFO 2015-02-11 20:33:36,282 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Task done job 42d7c451-0cc9-426e-ae1c-e7f50dfbc167
+INFO 2015-02-11 20:33:36,282 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:33:36,331 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=8ab6b3d5-654b-4e68-9598-c408643fe9e9)] Resending reply to 8ab6b3d5-654b-4e68-9598-c408643fe9e9
+INFO 2015-02-11 20:33:36,343 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=42d7c451-0cc9-426e-ae1c-e7f50dfbc167)] Resending reply to 42d7c451-0cc9-426e-ae1c-e7f50dfbc167
+INFO 2015-02-11 20:38:36,362 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Creating a request ID 381e168e-2cef-41ac-acdd-e9ca903629bf
+INFO 2015-02-11 20:38:36,365 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:38:36,378 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Starting job for command get_agent_data 381e168e-2cef-41ac-acdd-e9ca903629bf
+INFO 2015-02-11 20:38:36,379 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Creating a request ID df3ef9d5-8847-4ae6-a753-d1703b44c9ae
+INFO 2015-02-11 20:38:36,383 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Incoming request for command heartbeat
+INFO 2015-02-11 20:38:36,479 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Completed successfully job get_agent_data 381e168e-2cef-41ac-acdd-e9ca903629bf
+INFO 2015-02-11 20:38:36,480 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Task done job 381e168e-2cef-41ac-acdd-e9ca903629bf
+INFO 2015-02-11 20:38:36,480 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:38:36,480 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Starting job for command heartbeat df3ef9d5-8847-4ae6-a753-d1703b44c9ae
+INFO 2015-02-11 20:38:36,481 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Completed successfully job heartbeat df3ef9d5-8847-4ae6-a753-d1703b44c9ae
+INFO 2015-02-11 20:38:36,481 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Task done job df3ef9d5-8847-4ae6-a753-d1703b44c9ae
+INFO 2015-02-11 20:38:36,482 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:38:36,521 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=381e168e-2cef-41ac-acdd-e9ca903629bf)] Resending reply to 381e168e-2cef-41ac-acdd-e9ca903629bf
+INFO 2015-02-11 20:38:36,559 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=df3ef9d5-8847-4ae6-a753-d1703b44c9ae)] Resending reply to df3ef9d5-8847-4ae6-a753-d1703b44c9ae
+INFO 2015-02-11 20:45:52,231 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Creating a request ID ec1bc940-fe76-46b8-a8ce-61608b47e620
+INFO 2015-02-11 20:45:52,236 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:45:52,248 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Starting job for command get_agent_data ec1bc940-fe76-46b8-a8ce-61608b47e620
+INFO 2015-02-11 20:45:52,249 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Creating a request ID 6b8fcc55-6c04-4077-a502-a5682f39df29
+INFO 2015-02-11 20:45:52,252 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Incoming request for command heartbeat
+INFO 2015-02-11 20:45:52,349 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Completed successfully job get_agent_data ec1bc940-fe76-46b8-a8ce-61608b47e620
+INFO 2015-02-11 20:45:52,350 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Task done job ec1bc940-fe76-46b8-a8ce-61608b47e620
+INFO 2015-02-11 20:45:52,350 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:45:52,350 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Starting job for command heartbeat 6b8fcc55-6c04-4077-a502-a5682f39df29
+INFO 2015-02-11 20:45:52,351 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Completed successfully job heartbeat 6b8fcc55-6c04-4077-a502-a5682f39df29
+INFO 2015-02-11 20:45:52,351 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Task done job 6b8fcc55-6c04-4077-a502-a5682f39df29
+INFO 2015-02-11 20:45:52,351 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:45:52,394 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=ec1bc940-fe76-46b8-a8ce-61608b47e620)] Resending reply to ec1bc940-fe76-46b8-a8ce-61608b47e620
+INFO 2015-02-11 20:45:52,406 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=6b8fcc55-6c04-4077-a502-a5682f39df29)] Resending reply to 6b8fcc55-6c04-4077-a502-a5682f39df29
+INFO 2015-02-11 20:53:33,056 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Creating a request ID 310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7
+INFO 2015-02-11 20:53:33,060 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:53:33,121 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Starting job for command get_agent_data 310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7
+INFO 2015-02-11 20:53:33,123 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Creating a request ID 1aca7867-44f6-44e0-990e-f6f297bbb22c
+INFO 2015-02-11 20:53:33,126 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Incoming request for command heartbeat
+INFO 2015-02-11 20:53:33,223 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Completed successfully job get_agent_data 310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7
+INFO 2015-02-11 20:53:33,223 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Task done job 310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7
+INFO 2015-02-11 20:53:33,224 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:53:33,224 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Starting job for command heartbeat 1aca7867-44f6-44e0-990e-f6f297bbb22c
+INFO 2015-02-11 20:53:33,224 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Completed successfully job heartbeat 1aca7867-44f6-44e0-990e-f6f297bbb22c
+INFO 2015-02-11 20:53:33,225 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Task done job 1aca7867-44f6-44e0-990e-f6f297bbb22c
+INFO 2015-02-11 20:53:33,225 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:53:33,244 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7)] Resending reply to 310dd3b9-6fcd-4cc9-b4a1-cb5f30c71ec7
+INFO 2015-02-11 20:53:33,256 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=1aca7867-44f6-44e0-990e-f6f297bbb22c)] Resending reply to 1aca7867-44f6-44e0-990e-f6f297bbb22c
+INFO 2015-02-11 20:59:20,257 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Creating a request ID e3eb5467-0991-4096-b56f-3138046ff273
+INFO 2015-02-11 20:59:20,260 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Incoming request for command heartbeat
+INFO 2015-02-11 20:59:20,273 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Starting job for command heartbeat e3eb5467-0991-4096-b56f-3138046ff273
+INFO 2015-02-11 20:59:20,274 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Completed successfully job heartbeat e3eb5467-0991-4096-b56f-3138046ff273
+INFO 2015-02-11 20:59:20,274 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Task done job e3eb5467-0991-4096-b56f-3138046ff273
+INFO 2015-02-11 20:59:20,275 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Reply message sent for command heartbeat
+INFO 2015-02-11 20:59:20,288 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=e3eb5467-0991-4096-b56f-3138046ff273)] Resending reply to e3eb5467-0991-4096-b56f-3138046ff273
+INFO 2015-02-11 20:59:20,289 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Creating a request ID 98d6abd1-b1fc-40bc-9ae9-86b285c2de87
+INFO 2015-02-11 20:59:20,294 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Incoming request for command get_agent_data
+INFO 2015-02-11 20:59:20,305 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Starting job for command get_agent_data 98d6abd1-b1fc-40bc-9ae9-86b285c2de87
+INFO 2015-02-11 20:59:20,407 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Completed successfully job get_agent_data 98d6abd1-b1fc-40bc-9ae9-86b285c2de87
+INFO 2015-02-11 20:59:20,407 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Task done job 98d6abd1-b1fc-40bc-9ae9-86b285c2de87
+INFO 2015-02-11 20:59:20,408 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Reply message sent for command get_agent_data
+INFO 2015-02-11 20:59:20,433 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=98d6abd1-b1fc-40bc-9ae9-86b285c2de87)] Resending reply to 98d6abd1-b1fc-40bc-9ae9-86b285c2de87
+INFO 2015-02-11 21:07:13,295 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Creating a request ID b741cb8e-edf6-420e-bb1a-c2cd55b855f3
+INFO 2015-02-11 21:07:13,300 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Incoming request for command get_agent_data
+INFO 2015-02-11 21:07:13,337 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Starting job for command get_agent_data b741cb8e-edf6-420e-bb1a-c2cd55b855f3
+INFO 2015-02-11 21:07:13,338 [dcm.agent.dispatcher] dispatcher.py:168 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Creating a request ID 0e426dc7-b6fa-4caf-b6a8-c6deccc962c6
+INFO 2015-02-11 21:07:13,341 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Incoming request for command heartbeat
+INFO 2015-02-11 21:07:13,438 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Completed successfully job get_agent_data b741cb8e-edf6-420e-bb1a-c2cd55b855f3
+INFO 2015-02-11 21:07:13,438 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Task done job b741cb8e-edf6-420e-bb1a-c2cd55b855f3
+INFO 2015-02-11 21:07:13,439 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Reply message sent for command get_agent_data
+INFO 2015-02-11 21:07:13,439 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Starting job for command heartbeat 0e426dc7-b6fa-4caf-b6a8-c6deccc962c6
+INFO 2015-02-11 21:07:13,440 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Completed successfully job heartbeat 0e426dc7-b6fa-4caf-b6a8-c6deccc962c6
+INFO 2015-02-11 21:07:13,440 [dcm.agent.dispatcher] dispatcher.py:58 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Task done job 0e426dc7-b6fa-4caf-b6a8-c6deccc962c6
+INFO 2015-02-11 21:07:13,440 [dcm.agent.log.to.agent.manager] utils.py:282 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Reply message sent for command heartbeat
+INFO 2015-02-11 21:07:13,479 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=b741cb8e-edf6-420e-bb1a-c2cd55b855f3)] Resending reply to b741cb8e-edf6-420e-bb1a-c2cd55b855f3
+INFO 2015-02-11 21:07:13,492 [dcm.agent.messaging.utils] utils.py:52 [(REQUEST=0e426dc7-b6fa-4caf-b6a8-c6deccc962c6)] Resending reply to 0e426dc7-b6fa-4caf-b6a8-c6deccc962c6
+root@ip-10-29-59-177:~#
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/kraken.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="agent_config.html" title="Previous document">agent.conf file</a>
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+    
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-59252408-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+  </footer>
+  </body>
+</html>

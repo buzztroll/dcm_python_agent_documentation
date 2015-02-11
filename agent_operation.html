@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Agent Operation &mdash; Dell Cloud Manager Python Agent</title>
+    
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="next" title="Dell Cloud Manager Console" href="display_agent_information_from_console.html" />
+    <link rel="prev" title="Non-interactive Install" href="noninteractive_install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<!-- Custom Admin Guide code from page-header.html -->
+<header id="pageheader">
+<h1>    
+<a href="index.html ">Dell Cloud Manager Python Agent</a>
+</h1>
+</header>
+<!-- End of Custom Admin Guide code from page-header.html -->
+
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+        </li>
+        <li>
+          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="agent-operation">
+<span id="id1"></span><h1>Agent Operation<a class="headerlink" href="#agent-operation" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">service</span></tt> command can be used to start the agent, stop the agent, restart the agent or reload the agent&#8217;s configuration from the agent.conf file.</p>
+<blockquote>
+<div><p>Syntax:</p>
+<blockquote>
+<div>service dcmagent [start|stop|restart|reload]</div></blockquote>
+</div></blockquote>
+<p>As an alternative you can issue the following command:</p>
+<blockquote>
+<div>/etc/init.d/dcm-agent [start|stop|restart|reload]</div></blockquote>
+<p>After installation the agent is not automatically started.  To start it issue the service start command:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>service dcm-agent start
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can display detailed status on the agent by issuing this command:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">/opt/dcm-agent/embedded/agentve/bin/dcm-agent</span> <span class="pre">status</span></tt></p>
+<div class="highlight-text"><div class="highlight"><pre>WARNING:root:Config file locations /root/.dcm/agent.conf does not exist
+INITIALIZED
+    Commands processed:            4
+    Commands rejected:             0
+    Commands being processed:      0
+    Commands being replying to:    0
+    Replies rejected:              0
+RUNNING
+    Started at:                    2015-02-11 20:29:12
+    User:                          dcm
+    Status:                        sleeping
+    Pid:                           6439
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/kraken.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+        </li>
+        <li>
+          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">DCM Python Agent</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+    
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-59252408-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+  </footer>
+  </body>
+</html>
