@@ -42,8 +42,12 @@ help:
 clean:
 	-rm -Rf ${BUILDDIR}/*
 	-rm -Rf ${GHPAGESDIR}
+
 html: 
-	sphinx-build -q -b html -d ${BUILDDIR}/doctrees . ${BUILDDIR}/html
+	./make_doc.sh html
+
+ghpages:
+	./make_doc.sh ghpages
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
