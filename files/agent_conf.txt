@@ -1,0 +1,83 @@
+[logging]
+# The location of the log configuration file
+configfile=/dcm/etc/logging.yaml
+
+[intrusion]
+# The python module to be loaded for handling intrusion detection.
+#module=
+
+[plugin]
+# The location of the plugin configuration file
+configfile=/dcm/etc/plugin.conf
+
+[workers]
+# The number of worker threads that will be processing incoming requests
+count=1
+# The number of worker threads that will be processing long running jobs
+# (anything that returns a job description)
+long_runner_threads=1
+
+[storage]
+#dbfile=
+default_filesystem=ext3
+script_dir=/dcm/bin
+temppath=/tmp
+mountpoint=/mnt/dcmdata
+# The amount of time in seconds for a request id to stay in the database.
+db_timeout=14400
+base_dir=/dcm
+
+[system]
+user=dcm
+
+[platform]
+script_locations=common-linux
+# The platform/distribution version on which this agent is being installed.  Must
+# be used with [platform]name.
+#version=
+# The platform/distribution on which this agent isbeing installed.  Must be used
+# with [platform]version.
+#name=
+
+[connection]
+# The maximum number of milliseconds to wait before retrying a failed connection.
+max_backoff=300000
+# The maximum number of milliseconds to wait before retrying a failed connection.
+heartbeat_frequency=30
+# The url of the agent manager with which this agent will communicate.
+agentmanager_url=wss://66.57.3.53/agentManager
+# The number of milliseconds to add to the wait time before retrying a failed
+# connection.
+backoff=1000
+#source_file=
+#dest_file=
+# The type of connection object to use.  Supported types are ws and fallback
+type=ws
+
+[test]
+skip_handshake=False
+
+[jobs]
+retain_job_time=3600
+
+[messaging]
+retransmission_timeout=5.0
+# The maximum number of commands that can be outstanding at once.  -1 means
+# infinity.
+max_at_once=-1
+
+[storagecloud]
+#ca_cert_dir=
+secure=True
+
+[pydev]
+# The hostname of the pydev debugger
+#host=
+# The port where the pydev debugger is listening
+#port=
+
+[cloud]
+# The url of the metadata server.  Not applicable to all clouds.
+metadata_url=http://169.254.169.254/latest/meta-data/
+# The type of cloud on which this agent is running
+type=Amazon

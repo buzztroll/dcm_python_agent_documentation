@@ -1,0 +1,86 @@
+/dcm:
+total 36
+drwxr-xr-x  8 dcm  dcm  4096 Feb 11 20:10 .
+drwxr-xr-x 24 root root 4096 Feb 11 19:40 ..
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 bin
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 cfg
+drwxr-xr-x  3 dcm  dcm  4096 Feb 11 19:40 custom
+-rw-r--r--  1 root root    5 Feb 11 20:29 dcm-agent.pid
+drwxr-xr-x  2 dcm  dcm  4096 Feb 11 20:59 etc
+drwxr-x---  2 dcm  dcm  4096 Feb 11 19:40 home
+drwxr-xr-x  2 dcm  dcm  4096 Feb 11 20:11 logs
+
+/dcm/bin:
+total 136
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+-r-xr-x--- 1 dcm dcm 4463 Feb 11 19:40 addUser
+-r-xr-x--- 1 dcm dcm 1596 Feb 11 19:40 assembleRaid
+-r-xr-x--- 1 dcm dcm 1048 Feb 11 19:40 closeEncryption
+-r-xr-x--- 1 dcm dcm 1093 Feb 11 19:40 common_mod
+-r-xr-x--- 1 dcm dcm 2194 Feb 11 19:40 configureRaid
+-r-xr-x--- 1 dcm dcm  664 Feb 11 19:40 dcm-configure.sh
+-r-xr-x--- 1 dcm dcm  202 Feb 11 19:40 debInstall
+-r-xr-x--- 1 dcm dcm  910 Feb 11 19:40 enstratiusinitd
+-r-xr-x--- 1 dcm dcm 1276 Feb 11 19:40 enstratiusinitd-CENTOS
+-r-xr-x--- 1 dcm dcm 2123 Feb 11 19:40 format
+-r-xr-x--- 1 dcm dcm 1201 Feb 11 19:40 getDhcpAddress
+-r-xr-x--- 1 dcm dcm  385 Feb 11 19:40 getIpAddresses
+-r-xr-x--- 1 dcm dcm  354 Feb 11 19:40 getmyIP
+-r-xr-x--- 1 dcm dcm  783 Feb 11 19:40 getUnixOs
+-r-xr-x--- 1 dcm dcm  795 Feb 11 19:40 listDevices
+-r-xr-x--- 1 dcm dcm  471 Feb 11 19:40 log
+-r-xr-x--- 1 dcm dcm 1939 Feb 11 19:40 mount
+-r-xr-x--- 1 dcm dcm 1824 Feb 11 19:40 openEncryption
+-r-xr-x--- 1 dcm dcm  514 Feb 11 19:40 README
+-r-xr-x--- 1 dcm dcm 2068 Feb 11 19:40 removeUser
+-r-xr-x--- 1 dcm dcm 3302 Feb 11 19:40 rename
+-r-xr-x--- 1 dcm dcm  169 Feb 11 19:40 rpmInstall
+-r-xr-x--- 1 dcm dcm 3176 Feb 11 19:40 runConfigurationManagement-CHEF
+-r-xr-x--- 1 dcm dcm 4669 Feb 11 19:40 runConfigurationManagement-PUPPET
+-r-xr-x--- 1 dcm dcm 1039 Feb 11 19:40 secureDelete
+-r-xr-x--- 1 dcm dcm 1949 Feb 11 19:40 setupEncryption
+-r-xr-x--- 1 dcm dcm  236 Feb 11 19:40 startup-daemon.sh
+-r-xr-x--- 1 dcm dcm 1038 Feb 11 19:40 terminate
+-r-xr-x--- 1 dcm dcm  797 Feb 11 19:40 unmount
+-r-xr-x--- 1 dcm dcm   31 Feb 11 19:40 variables.sh
+
+/dcm/cfg:
+total 8
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+
+/dcm/custom:
+total 12
+drwxr-xr-x 3 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+drwxr-xr-x 2 dcm dcm 4096 Feb 11 19:40 bin
+
+/dcm/custom/bin:
+total 8
+drwxr-xr-x 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 3 dcm dcm 4096 Feb 11 19:40 ..
+
+/dcm/etc:
+total 36
+drwxr-xr-x 2 dcm dcm  4096 Feb 11 20:59 .
+drwxr-xr-x 8 dcm dcm  4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm  2101 Feb 11 19:40 agent.conf
+-rw-r--r-- 1 dcm dcm 14336 Feb 11 20:59 agentdb.sql
+-rw-r--r-- 1 dcm dcm  1685 Feb 11 19:40 logging.yaml
+-rw-r--r-- 1 dcm dcm  2884 Feb 11 19:40 plugin.conf
+
+/dcm/home:
+total 20
+drwxr-x--- 2 dcm dcm 4096 Feb 11 19:40 .
+drwxr-xr-x 8 dcm dcm 4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm  220 Apr  3  2012 .bash_logout
+-rw-r--r-- 1 dcm dcm 3486 Apr  3  2012 .bashrc
+-rw-r--r-- 1 dcm dcm  675 Apr  3  2012 .profile
+
+/dcm/logs:
+total 108
+drwxr-xr-x 2 dcm dcm  4096 Feb 11 20:11 .
+drwxr-xr-x 8 dcm dcm  4096 Feb 11 20:10 ..
+-rw-r--r-- 1 dcm dcm 55519 Feb 11 20:59 agent.log
+-rw-r--r-- 1 dcm dcm 37139 Feb 11 20:29 agent.log.job_runner

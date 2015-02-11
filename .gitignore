@@ -1,0 +1,10 @@
+*.swp
+*.idea/*
+_build/
+_ghpages
+*.html
+!layout.html
+!_templates/*
+*DS_Store
+Gemfile*
+Guardfile
