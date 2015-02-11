@@ -119,7 +119,7 @@ html_short_title = "DCM Python Agent"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "./_static/kraken.png"
+# html_logo = "./_static/kraken.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -142,7 +142,7 @@ html_use_smartypants = True
 # Custom sidebar templates, maps document names to template names.
 # The defaults can usually be found somewhere like:
 # /Library/Python/2.7/site-packages/Sphinx-1.1.3-py2.7.egg/sphinx/themes/basic/
-html_sidebars = { '**' : [ 'searchbox.html', 'localtoc.html', 'globaltoc.html'] }
+html_sidebars = { '**' : [ 'localtoc.html', 'globaltoc.html'] }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
