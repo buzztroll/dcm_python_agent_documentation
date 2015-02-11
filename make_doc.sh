@@ -30,9 +30,6 @@ rm -Rf ${BUILDDIR}/* || true
 # Run the sphinx build and pass it the version and major version
 sphinx-build -q -b html -d ${BUILDDIR}/doctrees . ${BUILDDIR}/html
 
-# Copy the generated version selection box javascript file to the build html directory
-cp -p admin_guide_versions.js ${BUILDDIR}/html
-
 echo "Build of the Dell Cloud Manager Python Agent documentation is finished. The HTML pages are in ${BUILDDIR}/html."
 
 # Exit the build if not building the GitHub pages
