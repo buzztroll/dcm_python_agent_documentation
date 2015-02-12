@@ -38,4 +38,5 @@ The Dell Cloud Manager python agent is supported on many popular GNU/Linux distr
    display_agent_information_from_console
    agent_filesystem
    agent_config
-   agent_log   
+   agent_log  
+   agent_uninstall

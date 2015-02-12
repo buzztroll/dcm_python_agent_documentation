@@ -142,7 +142,7 @@ html_use_smartypants = True
 # Custom sidebar templates, maps document names to template names.
 # The defaults can usually be found somewhere like:
 # /Library/Python/2.7/site-packages/Sphinx-1.1.3-py2.7.egg/sphinx/themes/basic/
-html_sidebars = { '**' : [ 'localtoc.html', 'globaltoc.html'] }
+html_sidebars = { '**' : [ 'searchbox.html', 'localtoc.html', 'globaltoc.html'] }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
