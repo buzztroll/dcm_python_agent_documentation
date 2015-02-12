@@ -7,9 +7,15 @@
 Uninstalling the Agent
 ----------------------
 
-Perform the following 3 steps to uninstall the python agent:
+Perform the following 4 steps to uninstall the python agent:
 
-1. Remove the **dcm-agent** package
+1. Stop the agent
+
+  .. code-block:: bash
+
+    service dcm-agent stop
+
+2. Remove the **dcm-agent** package
 
   Debian, Ubuntu Linux distributions
 
@@ -23,15 +29,15 @@ Perform the following 3 steps to uninstall the python agent:
 
       yum remove dcm-agent -y
 
-2. Remove the symlinks for the service scripts used to start and stop the agent
+3. Remove the symlinks for the service scripts used to start and stop the agent
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      find /etc/rc?.d  -name ???dcm-agent -exec rm -f {} \;
+    find /etc/rc?.d -name "[SK][0-9][0-9]dcm-agent" -exec rm -f {} \;
 
-3. Remove the **dcm** user account
+4. Remove the **dcm** user account
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      userdel dcm
+    userdel dcm
 
