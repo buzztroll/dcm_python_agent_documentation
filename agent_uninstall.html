@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Dell Cloud Manager Console &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Uninstalling the Agent &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Filesystem" href="agent_filesystem.html" />
-    <link rel="prev" title="Agent Operation" href="agent_operation.html" />
+    <link rel="prev" title="agent.log file" href="agent_log.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,11 +40,7 @@
     <ul>
         <li>
           &larr;
-          <a href="agent_operation.html" title="Previous document">Agent Operation</a>
-        </li>
-        <li>
-          <a href="agent_filesystem.html" title="Next document">Filesystem</a>
-          &rarr;
+          <a href="agent_log.html" title="Previous document">agent.log file</a>
         </li>
     </ul>
   </nav>
@@ -61,20 +56,42 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="dell-cloud-manager-console">
-<span id="dcm-console-agent-info"></span><h1>Dell Cloud Manager Console<a class="headerlink" href="#dell-cloud-manager-console" title="Permalink to this headline">¶</a></h1>
-<p>Dell Cloud Manager console showing the connected agent</p>
+  <div class="section" id="uninstalling-the-agent">
+<span id="agent-uninstall"></span><h1>Uninstalling the Agent<a class="headerlink" href="#uninstalling-the-agent" title="Permalink to this headline">¶</a></h1>
+<p>Perform the following 3 steps to uninstall the python agent:</p>
+<ol class="arabic simple">
+<li>Remove the <strong>dcm-agent</strong> package</li>
+</ol>
 <blockquote>
-<div><div class="figure">
-<img alt="_images/agent_connected.png" src="_images/agent_connected.png" />
+<div><p>Debian, Ubuntu Linux distributions</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>apt-get remove dcm-agent -y
+</pre></div>
 </div>
 </div></blockquote>
-<p>You can view the agent log by clicking on the &#8220;View Logs&#8221; button</p>
+<p>CentOS, Fedora, RHEL distributions</p>
 <blockquote>
-<div><div class="figure">
-<img alt="_images/view_agent_log.png" src="_images/view_agent_log.png" />
+<div><div class="highlight-bash"><div class="highlight"><pre>yum remove dcm-agent -y
+</pre></div>
 </div>
 </div></blockquote>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Remove the symlinks for the service scripts used to start and stop the agent</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>find /etc/rc?.d  -name ???dcm-agent -exec rm -f <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Remove the <strong>dcm</strong> user account</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>userdel dcm
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 
 
@@ -107,11 +124,7 @@
     <ul>
         <li>
           &larr;
-          <a href="agent_operation.html" title="Previous document">Agent Operation</a>
-        </li>
-        <li>
-          <a href="agent_filesystem.html" title="Next document">Filesystem</a>
-          &rarr;
+          <a href="agent_log.html" title="Previous document">agent.log file</a>
         </li>
     </ul>
   </nav>

@@ -66,21 +66,37 @@
 <p>The <tt class="docutils literal"><span class="pre">service</span></tt> command can be used to start the agent, stop the agent, restart the agent or reload the agent&#8217;s configuration from the agent.conf file.</p>
 <blockquote>
 <div><p>Syntax:</p>
-<blockquote>
-<div>service dcmagent [start|stop|restart|reload]</div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre>service dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
+</pre></div>
+</div>
 </div></blockquote>
 <p>As an alternative you can issue the following command:</p>
 <blockquote>
-<div>/etc/init.d/dcm-agent [start|stop|restart|reload]</div></blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>/etc/init.d/dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p>After installation the agent is not automatically started.  To start it issue the service start command:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre>service dcm-agent start
 </pre></div>
 </div>
 </div></blockquote>
+<p>You can display the version of the agent with this command:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>root@vagrant:~# sudo /opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
+Version 0.9.11-1e41f746f36c0bfe6f44f0ed67d12ba08462140d
+</pre></div>
+</div>
+</div></blockquote>
 <p>You can display detailed status on the agent by issuing this command:</p>
 <blockquote>
-<div><p><tt class="docutils literal"><span class="pre">/opt/dcm-agent/embedded/agentve/bin/dcm-agent</span> <span class="pre">status</span></tt></p>
+<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent status
+</pre></div>
+</div>
 <div class="highlight-text"><div class="highlight"><pre>WARNING:root:Config file locations /root/.dcm/agent.conf does not exist
 INITIALIZED
     Commands processed:            4
@@ -104,6 +120,19 @@ RUNNING
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
 <h3><a href="index.html">Table of Contents</a></h3>
 
         </div>
@@ -129,10 +158,10 @@ RUNNING
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 11, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 12, 2015.
     
 
- 
+
   </footer>
   </body>
 </html>
