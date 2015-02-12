@@ -65,7 +65,7 @@
 <span id="agent-interactive-install"></span><h1>Interactive Install<a class="headerlink" href="#interactive-install" title="Permalink to this headline">¶</a></h1>
 <p>Run the following command below with root authority to install the python agent in interactive mode.</p>
 <blockquote>
-<div><p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">[options]</span></tt></p>
+<div><p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
 <div class="highlight-text"><div class="highlight"><pre>root@ip-10-29-59-177:~# bash &lt;( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )
 
 *** some display output from the install has been omitted in order to reduce clutter ***

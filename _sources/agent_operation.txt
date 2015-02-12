@@ -25,8 +25,8 @@ After installation the agent is not automatically started.  To start it issue th
 
   .. code-block:: bash
 
-    service dcm-agent start
-
+    [root@ip-10-28-229-221 ~]# service dcm-agent start
+    Starting the dcm-agent...                                  [  OK  ]
 
 You can display the version of the agent with this command:
 
