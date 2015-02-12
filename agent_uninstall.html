@@ -58,8 +58,16 @@
             
   <div class="section" id="uninstalling-the-agent">
 <span id="agent-uninstall"></span><h1>Uninstalling the Agent<a class="headerlink" href="#uninstalling-the-agent" title="Permalink to this headline">¶</a></h1>
-<p>Perform the following 3 steps to uninstall the python agent:</p>
+<p>Perform the following 4 steps to uninstall the python agent:</p>
 <ol class="arabic simple">
+<li>Stop the agent</li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>service dcm-agent stop
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
 <li>Remove the <strong>dcm-agent</strong> package</li>
 </ol>
 <blockquote>
@@ -76,22 +84,22 @@
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic" start="2">
-<li><p class="first">Remove the symlinks for the service scripts used to start and stop the agent</p>
+<ol class="arabic simple" start="3">
+<li>Remove the symlinks for the service scripts used to start and stop the agent</li>
+</ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>find /etc/rc?.d  -name ???dcm-agent -exec rm -f <span class="o">{}</span> <span class="se">\;</span>
+<div><div class="highlight-bash"><div class="highlight"><pre>find /etc/rc?.d -name <span class="s2">&quot;[SK][0-9][0-9]dcm-agent&quot;</span> -exec rm -f <span class="o">{}</span> <span class="se">\;</span>
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-<li><p class="first">Remove the <strong>dcm</strong> user account</p>
+<ol class="arabic simple" start="4">
+<li>Remove the <strong>dcm</strong> user account</li>
+</ol>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre>userdel dcm
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-</ol>
 </div>
 
 
