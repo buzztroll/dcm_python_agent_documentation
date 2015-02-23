@@ -57,12 +57,20 @@ Run the following command below with root authority to install the python agent 
 
           -U, --user                 Linux user that the python agent will run as (default dcm)
                                      If you specify a different user then that user must already exist.
+
+          -o, --chef-client          Install the latest Chef client                                     
         
-          -p, --base-path            Base path where to install the agent (default /dcm)               
+          -p, --base-path            Base path where to install the agent (default /dcm) 
+
+          -r, --reload-conf          Reload the configuration file (used to populate defaults)             
 
           -L, --loglevel             Log level for logging (ERROR, WARN, INFO, DEBUG)                          
 
-          -l, ---logfile             Name of the python agent logfile (default agent.log)
+          -l, --logfile              Name of the python agent logfile (default agent.log)
+ 
+          -v, --verbose              Increase the amount of output produced by the script
+
+
 
   .. note:: In most cases it is not necessary to specify the **-c** parameter as the python agent can detect the cloud. 
 
