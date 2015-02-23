@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation Command Syntax &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Interactive install syntax &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
     <link rel="next" title="Environment Variables" href="agent_installation_env_variables.html" />
-    <link rel="prev" title="Overview" href="agent_installation.html" />
+    <link rel="prev" title="Installation" href="agent_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,7 +41,7 @@
     <ul>
         <li>
           &larr;
-          <a href="agent_installation.html" title="Previous document">Overview</a>
+          <a href="agent_installation.html" title="Previous document">Installation</a>
         </li>
         <li>
           <a href="agent_installation_env_variables.html" title="Next document">Environment Variables</a>
@@ -61,16 +61,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="installation-command-syntax">
-<span id="agent-installation-syntax"></span><h1>Installation Command Syntax<a class="headerlink" href="#installation-command-syntax" title="Permalink to this headline">¶</a></h1>
-<p>There are 2 ways to install the Dell Cloud Manager python agent:</p>
-<ol class="arabic simple">
-<li>Interactive mode</li>
-<li>Non-interactive mode (desired options can be specified on the command line)</li>
-</ol>
-<div class="section" id="interactive-mode">
-<h2>Interactive mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h2>
-<p>Run the following command below with root authority to install the python agent in interactive mode.</p>
+  <div class="section" id="interactive-install-syntax">
+<span id="agent-installation-syntax"></span><h1>Interactive install syntax<a class="headerlink" href="#interactive-install-syntax" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
 <p>The curl command downloads a bash shell script named <tt class="docutils literal"><span class="pre">installer.sh</span></tt> that will install the agent, and then executes the <tt class="docutils literal"><span class="pre">installer.sh</span></tt> bash shell script.  You will be prompted for:</p>
@@ -86,9 +78,8 @@
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="non-interactive-mode">
-<h2>Non-interactive mode<a class="headerlink" href="#non-interactive-mode" title="Permalink to this headline">¶</a></h2>
-<p>Run the following command below with root authority to install the python agent in non-interactive mode.</p>
+<div class="section" id="non-interactive-install-syntax">
+<h1>Non-interactive install syntax<a class="headerlink" href="#non-interactive-install-syntax" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">[options]</span></tt></p>
 <div class="highlight-text"><div class="highlight"><pre>Options:
@@ -134,7 +125,6 @@
 </div>
 </div></blockquote>
 </div>
-</div>
 
 
           </div>
@@ -157,19 +147,16 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <h3>This Page</h3>
   <ul>
-<li><a class="reference internal" href="#">Installation Command Syntax</a><ul>
-<li><a class="reference internal" href="#interactive-mode">Interactive mode</a></li>
-<li><a class="reference internal" href="#non-interactive-mode">Non-interactive mode</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Interactive install syntax</a></li>
+<li><a class="reference internal" href="#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 </ul>
 
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Installation Command Syntax</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="agent_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Interactive install syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
@@ -190,7 +177,7 @@
     <ul>
         <li>
           &larr;
-          <a href="agent_installation.html" title="Previous document">Overview</a>
+          <a href="agent_installation.html" title="Previous document">Installation</a>
         </li>
         <li>
           <a href="agent_installation_env_variables.html" title="Next document">Environment Variables</a>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Installation &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Installation Command Syntax" href="agent_install_syntax.html" />
-    <link rel="prev" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="next" title="Interactive install syntax" href="agent_install_syntax.html" />
+    <link rel="prev" title="Overview" href="agent_overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,10 +41,10 @@
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+          <a href="agent_overview.html" title="Previous document">Overview</a>
         </li>
         <li>
-          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          <a href="agent_install_syntax.html" title="Next document">Interactive install syntax</a>
           &rarr;
         </li>
     </ul>
@@ -61,26 +61,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="overview">
-<span id="agent-installation"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>The Dell Cloud Manager python agent is a lightweight application written in python that communicates with the Dell Cloud Manager provisioning server and provides enhanced automation and management capabilities.
-The python agent is only supported on Linux virtual machines. When it is installed on a Linux virtual machine that is launched from Dell Cloud manager it provides functions such as:</p>
-<ul class="simple">
-<li>Server health monitoring</li>
-<li>Automated software installation/configuration</li>
-<li>Data set installations</li>
-<li>Backups</li>
-<li>Disk volume management</li>
-</ul>
-<p>The Dell Cloud Manager python agent also contains a set of associated Bash scripts that are responsible for executing some actions on the server and are extensible by end users.</p>
-<p>All communication between the python agent and the Dell Cloud Manager provisioning server is initiated from the python agent and is is encrypted using SSL.
-The python agent opens a socket connection to port 443 on the Dell Cloud Manager provisioning server and can then receive commands to be executed on the virtual machine and can respond back to the Dell Cloud Manager server using the same connection. No inbound ports on the Linux virtual machine running the python agent need to be opened.  The python agent will continuously attempt to reconnect the connection to the Dell Cloud Manager server if the connection is lost.</p>
-<p>Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a sqlite database file. Because of this the agent system can survive reboots.</p>
-<p>The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, REHL and Fedora.</p>
-</div></blockquote>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="installation">
+<span id="agent-installation"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>There are 2 ways to install the Dell Cloud Manager python agent:</p>
 <ol class="arabic simple">
@@ -90,7 +72,6 @@ The python agent opens a socket connection to port 443 on the Dell Cloud Manager
 <p>In addition there are optional environment variables that you can set prior to installing the agent which affect and direct the installation and allow further custom installs.</p>
 <p>Installing the agent requires <strong>root</strong> authority.</p>
 </div></blockquote>
-</div>
 </div>
 
 
@@ -112,20 +93,12 @@ The python agent opens a socket connection to port 443 on the Dell Cloud Manager
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3>This Page</h3>
-  <ul>
-<li><a class="reference internal" href="#">Overview</a><ul>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-</ul>
-</li>
-</ul>
-
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Interactive install syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
@@ -146,10 +119,10 @@ The python agent opens a socket connection to port 443 on the Dell Cloud Manager
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+          <a href="agent_overview.html" title="Previous document">Overview</a>
         </li>
         <li>
-          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          <a href="agent_install_syntax.html" title="Next document">Interactive install syntax</a>
           &rarr;
         </li>
     </ul>
