@@ -7,7 +7,7 @@
 Environment Variables
 ---------------------
 
-These optional environment variables can be set prior to installing the agent to direct the installer.
+These optional environment variables can be set prior to installing the agent. They direct the installer to allow for advanced custom installs.
 
 .. code-block:: text
 

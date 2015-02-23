@@ -4,18 +4,8 @@
 
 .. _agent_installation_syntax:
 
-Installation Command Syntax
----------------------------
-
-There are 2 ways to install the Dell Cloud Manager python agent:
-
-1. Interactive mode
-2. Non-interactive mode (desired options can be specified on the command line)
-
-Interactive mode
-~~~~~~~~~~~~~~~~
-
-Run the following command below with root authority to install the python agent in interactive mode.
+Interactive install syntax
+--------------------------
 
   :samp:`bash <( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )`
 
@@ -29,10 +19,8 @@ Run the following command below with root authority to install the python agent 
   3. Whether or not to start the agent at system boot (default is Yes)
   4. Whether or not to install the latest Chef client (default is No)
  
-Non-interactive mode
-~~~~~~~~~~~~~~~~~~~~
-
-Run the following command below with root authority to install the python agent in non-interactive mode.
+Non-interactive install syntax
+------------------------------
 
   :samp:`curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - [options]`
 

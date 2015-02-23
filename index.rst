@@ -10,6 +10,7 @@ Dell Cloud Manager Python Agent
    :maxdepth: 3
    :titlesonly:
   
+   agent_overview
    agent_installation
    agent_install_syntax
    agent_installation_env_variables
