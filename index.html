@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="#" />
-    <link rel="next" title="Installation Command Syntax" href="agent_install_syntax.html" />
+    <link rel="next" title="Overview" href="agent_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -39,7 +39,7 @@
   <nav id="rellinks">
     <ul>
         <li>
-          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          <a href="agent_installation.html" title="Next document">Overview</a>
           &rarr;
         </li>
     </ul>
@@ -58,23 +58,24 @@
             
   <div class="section" id="dell-cloud-manager-python-agent">
 <h1>Dell Cloud Manager Python Agent<a class="headerlink" href="#dell-cloud-manager-python-agent" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The Dell Cloud Manager python agent is a lightweight application written in python that communicates with the Dell Cloud Manager provisioning server and provides enhanced automation and management capabilities.
-The python agent is only supported on Linux virtual machines. When it is installed on a Linux virtual machine that is launched from Dell Cloud manager it provides functions such as:</p>
-<ul class="simple">
-<li>Server health monitoring</li>
-<li>Automated software installation/configuration</li>
-<li>Data set installations</li>
-<li>Backups</li>
-<li>Disk volume management</li>
-</ul>
-<p>The Dell Cloud Manager python agent also contains a set of associated Bash scripts that are responsible for executing some actions on the server and are extensible by end users.</p>
-<p>All communication between the python agent and the Dell Cloud Manager provisioning server is initiated from the python agent and is is encrypted using SSL. The python agent opens a socket connection to port 443 on the Dell Cloud Manager provisioning server and can then receive commands to be executed on the virtual machine and can respond back to the Dell Cloud Manager server using the same connection. No inbound ports on the Linux virtual machine running the python agent need to be opened.  The python agent will continuously attempt to reconnect the connection to the Dell Cloud Manager server if the connection is lost.</p>
-<p>Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a sqlite database file. Because of this the agent system can survive reboots.</p>
-<p>The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, REHL and Fedora.</p>
 <div class="toctree-wrapper compound">
-</div>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
+</ul>
 </div>
 </div>
 
@@ -97,15 +98,20 @@ The python agent is only supported on Linux virtual machines. When it is install
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3>This Page</h3>
-  <ul>
-<li><a class="reference internal" href="#">Dell Cloud Manager Python Agent</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
-</ul>
-
 <h3><a href="#">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
+</ul>
 
         </div>
       </div>
@@ -115,7 +121,7 @@ The python agent is only supported on Linux virtual machines. When it is install
   <nav id="rellinks">
     <ul>
         <li>
-          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
+          <a href="agent_installation.html" title="Next document">Overview</a>
           &rarr;
         </li>
     </ul>
@@ -126,7 +132,7 @@ The python agent is only supported on Linux virtual machines. When it is install
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 12, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
     
 
 

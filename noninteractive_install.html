@@ -63,7 +63,9 @@
             
   <div class="section" id="non-interactive-install">
 <span id="agent-noninteractive-install"></span><h1>Non-interactive Install<a class="headerlink" href="#non-interactive-install" title="Permalink to this headline">¶</a></h1>
-<p>Run the following command below with root authority to install the python agent in non-interactive mode.  The only option specified in this example is the Web Socket URL for the dell Cloud Manager provisioning server where the agent manager is running. In most agent installations in On-Premise Dell Cloud Manager server environments that is the only required option.</p>
+<p>Run the following command below with <strong>root</strong> authority to install the python agent in non-interactive mode.
+The only option specified in this example is the Web Socket URL for the dell Cloud Manager provisioning server where the agent manager is running.
+In most agent installations in On-Premise Dell Cloud Manager server environments that is the only required option.</p>
 <blockquote>
 <div><p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">-u</span> <span class="pre">wss://66.57.3.53/agentManager</span></tt></p>
 <div class="highlight-text"><div class="highlight"><pre>root@ip-10-29-59-177:~# curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -u wss://66.57.3.53/agentManager
@@ -164,6 +166,19 @@ To start the agent now please run:
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
+</ul>
 
         </div>
       </div>
@@ -188,7 +203,7 @@ To start the agent now please run:
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 12, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
     
 
 

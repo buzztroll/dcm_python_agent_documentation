@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Agent Operation &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Environment Variables &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Dell Cloud Manager Console" href="display_agent_information_from_console.html" />
-    <link rel="prev" title="Non-interactive Install" href="noninteractive_install.html" />
+    <link rel="next" title="Interactive Install" href="interactive_install.html" />
+    <link rel="prev" title="Installation Command Syntax" href="agent_install_syntax.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,10 +41,10 @@
     <ul>
         <li>
           &larr;
-          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+          <a href="agent_install_syntax.html" title="Previous document">Installation Command Syntax</a>
         </li>
         <li>
-          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          <a href="interactive_install.html" title="Next document">Interactive Install</a>
           &rarr;
         </li>
     </ul>
@@ -61,58 +61,23 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="agent-operation">
-<span id="id1"></span><h1>Agent Operation<a class="headerlink" href="#agent-operation" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="docutils literal"><span class="pre">service</span></tt> command can be used to start the agent, stop the agent, restart the agent or reload the agent&#8217;s configuration from the agent.conf file.</p>
-<blockquote>
-<div><p>Syntax:</p>
-<div class="highlight-bash"><div class="highlight"><pre>service dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
+  <div class="section" id="environment-variables">
+<span id="agent-installation-env-variables"></span><h1>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
+<p>These optional environment variables can be set prior to installing the agent to direct the installer.</p>
+<div class="highlight-text"><div class="highlight"><pre>AGENT_LOCAL_PACKAGE=&lt;path&gt;            When set the script will look for the distribution package at the given path on the local file system instead of downloading it.
+
+AGENT_BASE_URL=&lt;url&gt;                  This is the base path to an HTTP repository where the packages are kept.
+                                      For example: https://s3.amazonaws.com/dcmagentunstable.
+                                      Packages will be found under that url with a name that matches: dcm-agent-&lt;distribution&gt;-&lt;version&gt;-&lt;architecture&gt;.&lt;pkg type&gt;
+                                      For example: dcm-agent-ubuntu-10.04-amd64.deb
+
+AGENT_UNSTABLE                        When set (not NULL), the script will download and install the latest unstable version of the dcm-agent.
+
+AGENT_VERSION=&lt;version&gt;               To download a specific version of the agent set this to the version.
+
+DCM_AGENT_FORCE_DISTRO_VERSION=       Instead of detecting the distribution version force it to this env string.
 </pre></div>
 </div>
-</div></blockquote>
-<p>As an alternative you can issue the following command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/etc/init.d/dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>After installation the agent is not automatically started.  To start it issue the service start command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>root@ip-10-28-229-221 ~<span class="o">]</span><span class="c"># service dcm-agent start</span>
-Starting the dcm-agent...                                  <span class="o">[</span>  OK  <span class="o">]</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>You can display the version of the agent with this command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
-</pre></div>
-</div>
-<div class="highlight-bash"><div class="highlight"><pre>root@vagrant:~# sudo /opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
-Version 0.9.11-1e41f746f36c0bfe6f44f0ed67d12ba08462140d
-</pre></div>
-</div>
-</div></blockquote>
-<p>You can display detailed status on the agent by issuing this command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent status
-</pre></div>
-</div>
-<div class="highlight-text"><div class="highlight"><pre>WARNING:root:Config file locations /root/.dcm/agent.conf does not exist
-INITIALIZED
-    Commands processed:            4
-    Commands rejected:             0
-    Commands being processed:      0
-    Commands being replying to:    0
-    Replies rejected:              0
-RUNNING
-    Started at:                    2015-02-11 20:29:12
-    User:                          dcm
-    Status:                        sleeping
-    Pid:                           6439
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 
 
@@ -138,10 +103,10 @@ RUNNING
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
@@ -158,10 +123,10 @@ RUNNING
     <ul>
         <li>
           &larr;
-          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+          <a href="agent_install_syntax.html" title="Previous document">Installation Command Syntax</a>
         </li>
         <li>
-          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          <a href="interactive_install.html" title="Next document">Interactive Install</a>
           &rarr;
         </li>
     </ul>

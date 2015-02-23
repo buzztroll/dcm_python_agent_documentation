@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Interactive Install" href="interactive_install.html" />
-    <link rel="prev" title="Dell Cloud Manager Python Agent" href="index.html" />
+    <link rel="next" title="Environment Variables" href="agent_installation_env_variables.html" />
+    <link rel="prev" title="Overview" href="agent_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,10 +41,10 @@
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+          <a href="agent_installation.html" title="Previous document">Overview</a>
         </li>
         <li>
-          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          <a href="agent_installation_env_variables.html" title="Next document">Environment Variables</a>
           &rarr;
         </li>
     </ul>
@@ -111,11 +111,17 @@
       -U, --user                 Linux user that the python agent will run as (default dcm)
                                  If you specify a different user then that user must already exist.
 
+      -o, --chef-client          Install the latest Chef client
+
       -p, --base-path            Base path where to install the agent (default /dcm)
+
+      -r, --reload-conf          Reload the configuration file (used to populate defaults)
 
       -L, --loglevel             Log level for logging (ERROR, WARN, INFO, DEBUG)
 
-      -l, ---logfile             Name of the python agent logfile (default agent.log)
+      -l, --logfile              Name of the python agent logfile (default agent.log)
+
+      -v, --verbose              Increase the amount of output produced by the script
 </pre></div>
 </div>
 <div class="admonition note">
@@ -159,6 +165,21 @@
 </ul>
 
 <h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation Command Syntax</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
+</ul>
 
         </div>
       </div>
@@ -169,10 +190,10 @@
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
+          <a href="agent_installation.html" title="Previous document">Overview</a>
         </li>
         <li>
-          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          <a href="agent_installation_env_variables.html" title="Next document">Environment Variables</a>
           &rarr;
         </li>
     </ul>
@@ -183,7 +204,7 @@
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 12, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
     
 
 

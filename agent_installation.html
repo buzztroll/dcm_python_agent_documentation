@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Agent Operation &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Overview &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Dell Cloud Manager Console" href="display_agent_information_from_console.html" />
-    <link rel="prev" title="Non-interactive Install" href="noninteractive_install.html" />
+    <link rel="next" title="Installation Command Syntax" href="agent_install_syntax.html" />
+    <link rel="prev" title="Dell Cloud Manager Python Agent" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,10 +41,10 @@
     <ul>
         <li>
           &larr;
-          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
         </li>
         <li>
-          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
           &rarr;
         </li>
     </ul>
@@ -61,58 +61,36 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="agent-operation">
-<span id="id1"></span><h1>Agent Operation<a class="headerlink" href="#agent-operation" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="docutils literal"><span class="pre">service</span></tt> command can be used to start the agent, stop the agent, restart the agent or reload the agent&#8217;s configuration from the agent.conf file.</p>
+  <div class="section" id="overview">
+<span id="agent-installation"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>Syntax:</p>
-<div class="highlight-bash"><div class="highlight"><pre>service dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
-</pre></div>
-</div>
+<div><p>The Dell Cloud Manager python agent is a lightweight application written in python that communicates with the Dell Cloud Manager provisioning server and provides enhanced automation and management capabilities.
+The python agent is only supported on Linux virtual machines. When it is installed on a Linux virtual machine that is launched from Dell Cloud manager it provides functions such as:</p>
+<ul class="simple">
+<li>Server health monitoring</li>
+<li>Automated software installation/configuration</li>
+<li>Data set installations</li>
+<li>Backups</li>
+<li>Disk volume management</li>
+</ul>
+<p>The Dell Cloud Manager python agent also contains a set of associated Bash scripts that are responsible for executing some actions on the server and are extensible by end users.</p>
+<p>All communication between the python agent and the Dell Cloud Manager provisioning server is initiated from the python agent and is is encrypted using SSL.
+The python agent opens a socket connection to port 443 on the Dell Cloud Manager provisioning server and can then receive commands to be executed on the virtual machine and can respond back to the Dell Cloud Manager server using the same connection. No inbound ports on the Linux virtual machine running the python agent need to be opened.  The python agent will continuously attempt to reconnect the connection to the Dell Cloud Manager server if the connection is lost.</p>
+<p>Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a sqlite database file. Because of this the agent system can survive reboots.</p>
+<p>The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, REHL and Fedora.</p>
 </div></blockquote>
-<p>As an alternative you can issue the following command:</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/etc/init.d/dcm-agent <span class="o">[</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">]</span>
-</pre></div>
-</div>
+<div><p>There are 2 ways to install the Dell Cloud Manager python agent:</p>
+<ol class="arabic simple">
+<li><strong>Interactive mode</strong> - you are prompted for a subset of the available installation options.</li>
+<li><strong>Non-interactive mode</strong> - you specify the desired options as command line arguments.</li>
+</ol>
+<p>In addition there are optional environment variables that you can set prior to installing the agent which affect and direct the installation and allow further custom installs.</p>
+<p>Installing the agent requires <strong>root</strong> authority.</p>
 </div></blockquote>
-<p>After installation the agent is not automatically started.  To start it issue the service start command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>root@ip-10-28-229-221 ~<span class="o">]</span><span class="c"># service dcm-agent start</span>
-Starting the dcm-agent...                                  <span class="o">[</span>  OK  <span class="o">]</span>
-</pre></div>
 </div>
-</div></blockquote>
-<p>You can display the version of the agent with this command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
-</pre></div>
-</div>
-<div class="highlight-bash"><div class="highlight"><pre>root@vagrant:~# sudo /opt/dcm-agent/embedded/agentve/bin/dcm-agent --version
-Version 0.9.11-1e41f746f36c0bfe6f44f0ed67d12ba08462140d
-</pre></div>
-</div>
-</div></blockquote>
-<p>You can display detailed status on the agent by issuing this command:</p>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>/opt/dcm-agent/embedded/agentve/bin/dcm-agent status
-</pre></div>
-</div>
-<div class="highlight-text"><div class="highlight"><pre>WARNING:root:Config file locations /root/.dcm/agent.conf does not exist
-INITIALIZED
-    Commands processed:            4
-    Commands rejected:             0
-    Commands being processed:      0
-    Commands being replying to:    0
-    Replies rejected:              0
-RUNNING
-    Started at:                    2015-02-11 20:29:12
-    User:                          dcm
-    Status:                        sleeping
-    Pid:                           6439
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 
 
@@ -134,14 +112,24 @@ RUNNING
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3>This Page</h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+</ul>
+
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="agent_installation.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Installation Command Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Agent Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
@@ -158,10 +146,10 @@ RUNNING
     <ul>
         <li>
           &larr;
-          <a href="noninteractive_install.html" title="Previous document">Non-interactive Install</a>
+          <a href="index.html" title="Previous document">Dell Cloud Manager Python Agent</a>
         </li>
         <li>
-          <a href="display_agent_information_from_console.html" title="Next document">Dell Cloud Manager Console</a>
+          <a href="agent_install_syntax.html" title="Next document">Installation Command Syntax</a>
           &rarr;
         </li>
     </ul>

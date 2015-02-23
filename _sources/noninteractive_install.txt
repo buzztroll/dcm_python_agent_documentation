@@ -7,7 +7,9 @@
 Non-interactive Install
 -----------------------
 
-Run the following command below with root authority to install the python agent in non-interactive mode.  The only option specified in this example is the Web Socket URL for the dell Cloud Manager provisioning server where the agent manager is running. In most agent installations in On-Premise Dell Cloud Manager server environments that is the only required option.
+Run the following command below with **root** authority to install the python agent in non-interactive mode.
+The only option specified in this example is the Web Socket URL for the dell Cloud Manager provisioning server where the agent manager is running.
+In most agent installations in On-Premise Dell Cloud Manager server environments that is the only required option.
 
   :samp:`curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -u wss://66.57.3.53/agentManager`
 
