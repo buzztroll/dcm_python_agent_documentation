@@ -43,7 +43,7 @@ Non-interactive install syntax
                                 Format: wss://hostname_or_ipaddress/agentManager 
                                 Default: wss://dcm.enstratius.com/agentManager                                    
 
-          -B, -on-boot          Configure the python agent to start at system boot (default)
+          -B, --on-boot         Configure the python agent to start at system boot (default is not to boot at restart)
 
           -m, --mount-point     Mount point where DCM stores data (default /mnt/dcmdata)
 
