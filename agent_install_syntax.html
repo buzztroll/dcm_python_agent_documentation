@@ -74,7 +74,7 @@
 <blockquote>
 <div>Format: wss://<strong>hostname_or_ipaddress</strong>/agentManager</div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Whether or not to start the agent at system boot (default is Yes)</li>
+<li>Whether or not to start the agent at system boot (default is No)</li>
 <li>Whether or not to install the latest Chef client (default is No)</li>
 </ol>
 <p>You can see an example of an interative installation <a class="reference internal" href="agent_interactive_install.html#agent-interactive-install"><em>here.</em></a></p>
@@ -122,6 +122,10 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In most cases it is not necessary to specify the <strong>-c</strong> parameter as the python agent can detect the cloud.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default the agent is configured to not be started at system boot.  If you wish to have the agent configured to be started at system boot then specify the <strong>-B</strong> or <strong>&#8211;on-boot</strong> option.</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
