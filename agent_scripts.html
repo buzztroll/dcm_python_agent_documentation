@@ -63,12 +63,20 @@
             
   <div class="section" id="scripts">
 <span id="agent-scripts"></span><h1>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
-<p>The agent scripts are designed to be extended and customized. By default the agent scripts are installed in the <strong>/dcm/bin</strong> directory.
-However the scripts in the <strong>/dcm/bin</strong> directory are not designed to be edit directly as these scripts are overwritten during an upgrade.
+<p>The agent scripts are designed to be extended and customized. By default the agent scripts are installed in the <strong>/dcm/bin</strong> directory.</p>
+<div class="highlight-python"><div class="highlight"><pre>root@localhost:/# ls /dcm/bin
+addUser          common_mod        debInstall              format          getmyIP      log             README      rpmInstall                         secureDelete       terminate
+assembleRaid     configureRaid     enstratiusinitd         getDhcpAddress  getUnixOs    mount           removeUser  runConfigurationManagement-CHEF    setupEncryption    unmount
+closeEncryption  dcm-configure.sh  enstratiusinitd-CENTOS  getIpAddresses  listDevices  openEncryption  rename      runConfigurationManagement-PUPPET  startup-daemon.sh  variables.sh
+</pre></div>
+</div>
+<p>However the scripts in the <strong>/dcm/bin</strong> directory are not designed to be edited directly as these scripts are overwritten during an upgrade.
 Instead use the <strong>/dcm/custom/bin</strong> directory to run custom scripts. Custom scripts can be developed to run before, in place of and/or after the scripts provided in the <strong>/dcm/bin</strong> directory.</p>
-<p>To run a script before the default DCM agent script, place a script named $scriptName<strong>-pre</strong> in the <strong>/dcm/custom/bin</strong> directory.</p>
-<p>To run a script in place of the default DCM agent script, place a script of the same name in the <strong>/dcm/custom/bin</strong> directory.</p>
-<p>To run a script after the default DCM agent script, place a script named $scriptName<strong>-post</strong> in the <strong>/dcm/custom/bin</strong> directory.</p>
+<ul class="simple">
+<li>To run a script before the default DCM agent script, place a script named $scriptName<strong>-pre</strong> in the <strong>/dcm/custom/bin</strong> directory.</li>
+<li>To run a script in place of the default DCM agent script, place a script of the same name in the <strong>/dcm/custom/bin</strong> directory.</li>
+<li>To run a script after the default DCM agent script, place a script named $scriptName<strong>-post</strong> in the <strong>/dcm/custom/bin</strong> directory.</li>
+</ul>
 <p>For example, to modify the <strong>addUser</strong> script do the following:</p>
 <ul class="simple">
 <li><strong>/dcm/custom/bin/addUser</strong>      - if this script exists, it will completely replace this script <strong>/dcm/custom/bin/addUser</strong></li>
