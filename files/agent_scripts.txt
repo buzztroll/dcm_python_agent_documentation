@@ -1,0 +1,4 @@
+root@localhost:/# ls /dcm/bin
+addUser          common_mod        debInstall              format          getmyIP      log             README      rpmInstall                         secureDelete       terminate
+assembleRaid     configureRaid     enstratiusinitd         getDhcpAddress  getUnixOs    mount           removeUser  runConfigurationManagement-CHEF    setupEncryption    unmount
+closeEncryption  dcm-configure.sh  enstratiusinitd-CENTOS  getIpAddresses  listDevices  openEncryption  rename      runConfigurationManagement-PUPPET  startup-daemon.sh  variables.sh
