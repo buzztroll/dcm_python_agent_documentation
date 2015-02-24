@@ -18,7 +18,7 @@ Interactive install syntax
 
     Format: wss://\ **hostname_or_ipaddress**\/agentManager
 
-  3. Whether or not to start the agent at system boot (default is Yes)
+  3. Whether or not to start the agent at system boot (default is No)
   4. Whether or not to install the latest Chef client (default is No)
 
   You can see an example of an interative installation :ref:`here.<agent_interactive_install>`
@@ -67,5 +67,7 @@ Non-interactive install syntax
   You can see an example of an Non-interactive installation :ref:`here.<agent_noninteractive_install>`          
 
   .. note:: In most cases it is not necessary to specify the **-c** parameter as the python agent can detect the cloud. 
+  
+  .. note:: By default the agent is configured to not be started at system boot.  If you wish to have the agent configured to be started at system boot then specify the **-B** or **--on-boot** option.
 
   .. warning:: The default value for the web socket URL is **wss://dcm.enstratius.com/agentManager** which is the Dell Cloud Manager SaaS provisioning server. This needs to be changed for On-Premise environments.
