@@ -7,20 +7,26 @@
 Interactive install syntax
 --------------------------
 
+  Issue the following command to install the Dell Cloud Manager python agent in "interactive mode".
+
   :samp:`bash <( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )`
 
-  The curl command downloads a bash shell script named ``installer.sh`` that will install the agent, and then executes the ``installer.sh`` bash shell script.  You will be prompted for:
+  You will be prompted for:
 
-  1. Cloud provider that the launched server where the python agent will be installed.
-  2. Contact web socket URL string for the Dell Cloud Manager provisioning server agent manager.
+  1. Cloud provider of the launched server where the python agent will be installed.
+  2. Web socket URL string for the Dell Cloud Manager provisioning server agent manager service.
 
     Format: wss://\ **hostname_or_ipaddress**\/agentManager
 
   3. Whether or not to start the agent at system boot (default is Yes)
   4. Whether or not to install the latest Chef client (default is No)
+
+  You can see an example of an interative installation :ref:`here.<agent_interactive_install>`
  
 Non-interactive install syntax
 ------------------------------
+
+  Issue the following command to install the Dell Cloud Manager python agent in "non-interactive mode".
 
   :samp:`curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - [options]`
 
@@ -28,37 +34,37 @@ Non-interactive install syntax
 
     Options: 
 
-          -c, --cloud                cloud Provider 
-                                     --------------------------------------------------------------
-                                     Amazon, Azure, Bluelock, CloudStack, CloudStack3
-                                     Eucalyptus, Google, Joyent, Konami, OpenStack, Other, UNKNOWN
+          -c, --cloud           cloud Provider 
+                                --------------------------------------------------------------
+                                Amazon, Azure, Bluelock, CloudStack, CloudStack3,
+                                Eucalyptus, Google, Joyent, Konami, OpenStack, Other, UNKNOWN
 
-          -u, --url                  Web socket URL of the Dell Cloud Manager provisioning server agent manager
-                                     Format: wss://hostname_or_ipaddress/agentManager 
-                                     Default: wss://dcm.enstratius.com/agentManager                                    
+          -u, --url             Web socket URL of the Dell Cloud Manager provisioning server agent manager service
+                                Format: wss://hostname_or_ipaddress/agentManager 
+                                Default: wss://dcm.enstratius.com/agentManager                                    
 
-          -B, -on-boot               Configure the python agent to start at system boot (default)
+          -B, -on-boot          Configure the python agent to start at system boot (default)
 
-          -m, --mount-point          Mount point where DCM stores data (default /mnt/dcmdata)
+          -m, --mount-point     Mount point where DCM stores data (default /mnt/dcmdata)
 
-          -t, --tmp-path             Path to the temporary directory  (default /tmp)
+          -t, --tmp-path        Path to the temporary directory  (default /tmp)
 
-          -U, --user                 Linux user that the python agent will run as (default dcm)
-                                     If you specify a different user then that user must already exist.
+          -U, --user            Linux user that the python agent will run as (default dcm)
+                                If you specify a different user then that user must already exist.
 
-          -o, --chef-client          Install the latest Chef client                                     
+          -o, --chef-client     Install the latest Chef client                                     
         
-          -p, --base-path            Base path where to install the agent (default /dcm) 
+          -p, --base-path       Base path where to install the agent (default /dcm) 
 
-          -r, --reload-conf          Reload the configuration file (used to populate defaults)             
+          -r, --reload-conf     Reload the configuration file (used to populate defaults)             
 
-          -L, --loglevel             Log level for logging (ERROR, WARN, INFO, DEBUG)                          
+          -L, --loglevel        Log level for logging (ERROR, WARN, INFO, DEBUG)                          
 
-          -l, --logfile              Name of the python agent logfile (default agent.log)
+          -l, --logfile         Name of the python agent logfile (default agent.log)
  
-          -v, --verbose              Increase the amount of output produced by the script
+          -v, --verbose         Increase the amount of output produced by the script
 
-
+  You can see an example of an Non-interactive installation :ref:`here.<agent_noninteractive_install>`          
 
   .. note:: In most cases it is not necessary to specify the **-c** parameter as the python agent can detect the cloud. 
 

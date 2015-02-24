@@ -21,6 +21,6 @@ Overview
    All communication between the python agent and the Dell Cloud Manager provisioning server is initiated from the python agent and is is encrypted using SSL. 
    The python agent opens a socket connection to port 443 on the Dell Cloud Manager provisioning server and can then receive commands to be executed on the virtual machine and can respond back to the Dell Cloud Manager server using the same connection. No inbound ports on the Linux virtual machine running the python agent need to be opened.  The python agent will continuously attempt to reconnect the connection to the Dell Cloud Manager server if the connection is lost.
 
-   Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a sqlite database file. Because of this the agent system can survive reboots.
+   Every command executed by the python agent comes with a globally unique identifier. This identifier is used to ensure that the agent only executes a received command one time. The commands and identifiers are kept in a SQLite database file. Because of this the agent system can survive reboots.
 
-   The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, REHL and Fedora. 
+   The Dell Cloud Manager python agent is supported on many popular GNU/Linux distributions such as Ubuntu, Debian, Cent OS, RHEL and Fedora. 

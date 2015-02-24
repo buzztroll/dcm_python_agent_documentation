@@ -14,11 +14,12 @@ Dell Cloud Manager Python Agent
    agent_installation
    agent_install_syntax
    agent_installation_env_variables
-   interactive_install
-   noninteractive_install
+   agent_interactive_install
+   agent_noninteractive_install
    agent_operation
    display_agent_information_from_console
    agent_filesystem
    agent_config
    agent_log  
+   agent_scripts
    agent_uninstall

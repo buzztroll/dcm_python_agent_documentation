@@ -1,0 +1,20 @@
+export AGENT_UNSTABLE=YES
+
+root@vagrant:/tmp# bash <( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 11902  100 11902    0     0  75159      0 --:--:-- --:--:-- --:--:--  152k
+/usr/bin/sudo
+determining architecture...
+done
+ubuntu-12.04-amd64
+Starting the installation process...
+Downloading DCM Agent from https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb
+This may take a few minutes.
+Downloading https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb ...
+Installing DCM Agent.
+Selecting previously unselected package dcm-agent.
+(Reading database ... 56155 files and directories currently installed.)
+Unpacking dcm-agent (from dcm-agent-ubuntu-12.04-amd64.deb) ...
+Setting up dcm-agent (0.9.12+20150126020732-1) ...
+Creating user and group...
