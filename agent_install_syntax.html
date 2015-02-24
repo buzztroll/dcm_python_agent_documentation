@@ -64,11 +64,12 @@
   <div class="section" id="interactive-install-syntax">
 <span id="agent-installation-syntax"></span><h1>Interactive install syntax<a class="headerlink" href="#interactive-install-syntax" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
-<p>The curl command downloads a bash shell script named <tt class="docutils literal"><span class="pre">installer.sh</span></tt> that will install the agent, and then executes the <tt class="docutils literal"><span class="pre">installer.sh</span></tt> bash shell script.  You will be prompted for:</p>
+<div><p>Issue the following command to install the Dell Cloud Manager python agent in &#8220;interactive mode&#8221;.</p>
+<p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
+<p>You will be prompted for:</p>
 <ol class="arabic simple">
-<li>Cloud provider that the launched server where the python agent will be installed.</li>
-<li>Contact web socket URL string for the Dell Cloud Manager provisioning server agent manager.</li>
+<li>Cloud provider of the launched server where the python agent will be installed.</li>
+<li>Web socket URL string for the Dell Cloud Manager provisioning server agent manager service.</li>
 </ol>
 <blockquote>
 <div>Format: wss://<strong>hostname_or_ipaddress</strong>/agentManager</div></blockquote>
@@ -76,45 +77,48 @@
 <li>Whether or not to start the agent at system boot (default is Yes)</li>
 <li>Whether or not to install the latest Chef client (default is No)</li>
 </ol>
+<p>You can see an example of an interative installation <a class="reference internal" href="agent_interactive_install.html#agent-interactive-install"><em>here.</em></a></p>
 </div></blockquote>
 </div>
 <div class="section" id="non-interactive-install-syntax">
 <h1>Non-interactive install syntax<a class="headerlink" href="#non-interactive-install-syntax" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">[options]</span></tt></p>
+<div><p>Issue the following command to install the Dell Cloud Manager python agent in &#8220;non-interactive mode&#8221;.</p>
+<p><tt class="samp docutils literal"><span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">|</span> <span class="pre">bash</span> <span class="pre">-s</span> <span class="pre">-</span> <span class="pre">[options]</span></tt></p>
 <div class="highlight-text"><div class="highlight"><pre>Options:
 
-      -c, --cloud                cloud Provider
-                                 --------------------------------------------------------------
-                                 Amazon, Azure, Bluelock, CloudStack, CloudStack3
-                                 Eucalyptus, Google, Joyent, Konami, OpenStack, Other, UNKNOWN
+      -c, --cloud           cloud Provider
+                            --------------------------------------------------------------
+                            Amazon, Azure, Bluelock, CloudStack, CloudStack3,
+                            Eucalyptus, Google, Joyent, Konami, OpenStack, Other, UNKNOWN
 
-      -u, --url                  Web socket URL of the Dell Cloud Manager provisioning server agent manager
-                                 Format: wss://hostname_or_ipaddress/agentManager
-                                 Default: wss://dcm.enstratius.com/agentManager
+      -u, --url             Web socket URL of the Dell Cloud Manager provisioning server agent manager service
+                            Format: wss://hostname_or_ipaddress/agentManager
+                            Default: wss://dcm.enstratius.com/agentManager
 
-      -B, -on-boot               Configure the python agent to start at system boot (default)
+      -B, -on-boot          Configure the python agent to start at system boot (default)
 
-      -m, --mount-point          Mount point where DCM stores data (default /mnt/dcmdata)
+      -m, --mount-point     Mount point where DCM stores data (default /mnt/dcmdata)
 
-      -t, --tmp-path             Path to the temporary directory  (default /tmp)
+      -t, --tmp-path        Path to the temporary directory  (default /tmp)
 
-      -U, --user                 Linux user that the python agent will run as (default dcm)
-                                 If you specify a different user then that user must already exist.
+      -U, --user            Linux user that the python agent will run as (default dcm)
+                            If you specify a different user then that user must already exist.
 
-      -o, --chef-client          Install the latest Chef client
+      -o, --chef-client     Install the latest Chef client
 
-      -p, --base-path            Base path where to install the agent (default /dcm)
+      -p, --base-path       Base path where to install the agent (default /dcm)
 
-      -r, --reload-conf          Reload the configuration file (used to populate defaults)
+      -r, --reload-conf     Reload the configuration file (used to populate defaults)
 
-      -L, --loglevel             Log level for logging (ERROR, WARN, INFO, DEBUG)
+      -L, --loglevel        Log level for logging (ERROR, WARN, INFO, DEBUG)
 
-      -l, --logfile              Name of the python agent logfile (default agent.log)
+      -l, --logfile         Name of the python agent logfile (default agent.log)
 
-      -v, --verbose              Increase the amount of output produced by the script
+      -v, --verbose         Increase the amount of output produced by the script
 </pre></div>
 </div>
+<p>You can see an example of an Non-interactive installation <a class="reference internal" href="agent_noninteractive_install.html#agent-noninteractive-install"><em>here.</em></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In most cases it is not necessary to specify the <strong>-c</strong> parameter as the python agent can detect the cloud.</p>
@@ -158,13 +162,14 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">DCM Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_scripts.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
 </ul>
 
@@ -191,7 +196,7 @@
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 24, 2015.
     
 
 

@@ -4,8 +4,8 @@
 
 .. _dcm_console_agent_info:
 
-Dell Cloud Manager Console
---------------------------
+DCM Console
+-----------
 
 Dell Cloud Manager console showing the connected agent
   

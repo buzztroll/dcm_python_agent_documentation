@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Interactive Install &mdash; Dell Cloud Manager Python Agent</title>
+    <title>Scripts &mdash; Dell Cloud Manager Python Agent</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Non-interactive Install" href="noninteractive_install.html" />
-    <link rel="prev" title="Environment Variables" href="agent_installation_env_variables.html" />
+    <link rel="next" title="Uninstalling the Agent" href="agent_uninstall.html" />
+    <link rel="prev" title="agent.log file" href="agent_log.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -41,10 +41,10 @@
     <ul>
         <li>
           &larr;
-          <a href="agent_installation_env_variables.html" title="Previous document">Environment Variables</a>
+          <a href="agent_log.html" title="Previous document">agent.log file</a>
         </li>
         <li>
-          <a href="noninteractive_install.html" title="Next document">Non-interactive Install</a>
+          <a href="agent_uninstall.html" title="Next document">Uninstalling the Agent</a>
           &rarr;
         </li>
     </ul>
@@ -61,62 +61,20 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="interactive-install">
-<span id="agent-interactive-install"></span><h1>Interactive Install<a class="headerlink" href="#interactive-install" title="Permalink to this headline">¶</a></h1>
-<p>Run the following command below with <strong>root</strong> authority to install the python agent in interactive mode.</p>
-<blockquote>
-<div><p><tt class="samp docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(</span> <span class="pre">curl</span> <span class="pre">-k</span> <span class="pre">http://s3.amazonaws.com/dcmagentnightly/installer.sh</span> <span class="pre">)</span></tt></p>
-<div class="highlight-text"><div class="highlight"><pre>root@ip-10-29-59-177:~# bash &lt;( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )
-
-*** some display output from the install has been omitted in order to reduce clutter ***
-
-Get instance ID called
-Instance ID is i-ce752c3f
- 0) Amazon
- 1) Azure
- 2) Bluelock
- 3) CloudStack
- 4) CloudStack3
- 5) Eucalyptus
- 6) Google
- 7) Joyent
- 8) Konami
- 9) OpenStack
-10) Other
-11) UNKNOWN
-<span class="hll">Select your cloud (Amazon): 0
-</span>Please enter the contact string of the agent manager (wss://dcm.enstratius.com/agentManager)
-<span class="hll">wss://66.57.3.53/agentManager
-</span>Making the needed directories...
-    /dcm
-    /dcm/bin
-    /dcm/bin
-    /dcm/custom
-    /dcm/custom/bin
-    /dcm/etc
-    /dcm/logs
-    /dcm/home
-    /dcm/cfg
-    /tmp
-...Done.
-Changing ownership to dcm:dcm
-<span class="hll">Would you like to start the agent on boot? (Y/n)
-</span><span class="hll">Y
-</span>  Adding system startup for /etc/init.d/dcm-agent ...
-    /etc/rc0.d/K20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc1.d/K20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc6.d/K20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc2.d/S20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc3.d/S20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc4.d/S20dcm-agent -&gt; ../init.d/dcm-agent
-    /etc/rc5.d/S20dcm-agent -&gt; ../init.d/dcm-agent
-<span class="hll">(Optional) Would you like to install chef client? (Y/N) N
-</span>To start the agent now please run:
-/etc/init.d/dcm-agent start
-root@ip-10-29-59-177:~#
-</pre></div>
-</div>
-</div></blockquote>
+  <div class="section" id="scripts">
+<span id="agent-scripts"></span><h1>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
+<p>The agent scripts are designed to be extended and customized. By default the agent scripts are installed in the <strong>/dcm/bin</strong> directory.
+However the scripts in the <strong>/dcm/bin</strong> directory are not designed to be edit directly as these scripts are overwritten during an upgrade.
+Instead use the <strong>/dcm/custom/bin</strong> directory to run custom scripts. Custom scripts can be developed to run before, in place of and/or after the scripts provided in the <strong>/dcm/bin</strong> directory.</p>
+<p>To run a script before the default DCM agent script, place a script named $scriptName<strong>-pre</strong> in the <strong>/dcm/custom/bin</strong> directory.</p>
+<p>To run a script in place of the default DCM agent script, place a script of the same name in the <strong>/dcm/custom/bin</strong> directory.</p>
+<p>To run a script after the default DCM agent script, place a script named $scriptName<strong>-post</strong> in the <strong>/dcm/custom/bin</strong> directory.</p>
+<p>For example, to modify the <strong>addUser</strong> script do the following:</p>
+<ul class="simple">
+<li><strong>/dcm/custom/bin/addUser</strong>      - if this script exists, it will completely replace this script <strong>/dcm/custom/bin/addUser</strong></li>
+<li><strong>/dcm/custom/bin/addUser-pre</strong>  - if this script exists, it will be executed before this script <strong>/dcm/custom/bin/addUser</strong></li>
+<li><strong>/dcm/custom/bin/addUser-post</strong> - if this script exists, it will be executed after this script  <strong>/dcm/custom/bin/addUser</strong></li>
+</ul>
 </div>
 
 
@@ -145,13 +103,14 @@ root@ip-10-29-59-177:~#
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_installation_env_variables.html">Environment Variables</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">DCM Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
 </ul>
 
@@ -164,10 +123,10 @@ root@ip-10-29-59-177:~#
     <ul>
         <li>
           &larr;
-          <a href="agent_installation_env_variables.html" title="Previous document">Environment Variables</a>
+          <a href="agent_log.html" title="Previous document">agent.log file</a>
         </li>
         <li>
-          <a href="noninteractive_install.html" title="Next document">Non-interactive Install</a>
+          <a href="agent_uninstall.html" title="Next document">Uninstalling the Agent</a>
           &rarr;
         </li>
     </ul>
@@ -178,7 +137,7 @@ root@ip-10-29-59-177:~#
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 24, 2015.
     
 
 

@@ -4,8 +4,8 @@
 
 .. _agent_operation:
 
-Agent Operation
----------------
+Operation
+---------
 
 The ``service`` command can be used to start the agent, stop the agent, restart the agent or reload the agent's configuration from the agent.conf file.
 

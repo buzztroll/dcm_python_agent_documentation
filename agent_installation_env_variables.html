@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Dell Cloud Manager Python Agent" href="index.html" />
-    <link rel="next" title="Interactive Install" href="interactive_install.html" />
+    <link rel="next" title="Interactive Install" href="agent_interactive_install.html" />
     <link rel="prev" title="Interactive install syntax" href="agent_install_syntax.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
@@ -44,7 +44,7 @@
           <a href="agent_install_syntax.html" title="Previous document">Interactive install syntax</a>
         </li>
         <li>
-          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          <a href="agent_interactive_install.html" title="Next document">Interactive Install</a>
           &rarr;
         </li>
     </ul>
@@ -63,20 +63,43 @@
             
   <div class="section" id="environment-variables">
 <span id="agent-installation-env-variables"></span><h1>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
-<p>These optional environment variables can be set prior to installing the agent. They direct the installer to allow for advanced custom installs.</p>
-<div class="highlight-text"><div class="highlight"><pre>AGENT_LOCAL_PACKAGE=&lt;path&gt;            When set the script will look for the distribution package at the given path on the local file system instead of downloading it.
+<p>By default the agent installer detects the Linux distribution of the server where the installer is running on and will download and install the latest appropriate agent distribution.</p>
+<p>These optional environment variables can be set prior to running the agent installer. They affect some decisions made by the installer and allow for advanced custom installs.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In most cases it is not necessary to use (export) any of these environment variables.</p>
+</div>
+<div class="highlight-text"><div class="highlight"><pre>AGENT_LOCAL_PACKAGE=&lt;path&gt;        This variable will direct the installer to use the specified file-system agent distribution package instead of downloading it.
+                                  Example: export AGENT_LOCAL_PACKAGE=&quot;/tmp/dcm-agent-ubuntu-14.04-amd64-latest.deb&quot;
 
-AGENT_BASE_URL=&lt;url&gt;                  This is the base path to an HTTP repository where the packages are kept.
-                                      For example: https://s3.amazonaws.com/dcmagentunstable.
-                                      Packages will be found under that url with a name that matches: dcm-agent-&lt;distribution&gt;-&lt;version&gt;-&lt;architecture&gt;.&lt;pkg type&gt;
-                                      For example: dcm-agent-ubuntu-10.04-amd64.deb
+AGENT_BASE_URL=&lt;url&gt;              This setting will direct the installer to use the specified URL as the base URL for downloading the agent distribution package.
+                                  By default the agent installer downloads the agent distribution packages from https://dcmagentnightly.s3.amazonaws.com
 
-AGENT_UNSTABLE                        When set (not NULL), the script will download and install the latest unstable version of the dcm-agent.
+                                  To direct the installer to download the agent distribution package from the unstable agent repository specify:
+                                  export AGENT_BASE_URL=&quot;https://s3.amazonaws.com/dcmagentunstable&quot;
 
-AGENT_VERSION=&lt;version&gt;               To download a specific version of the agent set this to the version.
+AGENT_UNSTABLE                    If this variable exists then the installer will download and install the latest unstable version of the agent distribution package.
+                                  Example: export AGENT_UNSTABLE=YES
 
-DCM_AGENT_FORCE_DISTRO_VERSION=       Instead of detecting the distribution version force it to this env string.
+AGENT_VERSION=&lt;version&gt;           This setting will direct the installer to download the specified version of the agent distribution package.
+                                  Note: this is the version of the Dell Cloud Manager agent distribution package, not the version of the Linux distribution.
+                                  Example:  export AGENT_VERSION=&quot;9.12&quot;
+
+DCM_AGENT_FORCE_DISTRO_VERSION=   This setting will direct the installer to use the specified agent distribution package instead of letting the installer determine it.
+                                  Example:  export DCM_AGENT_FORCE_DISTRO_VERSION=&quot;dcm-agent-rhel-6.6-x86_64-0.9.12.rpm&quot;
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The agent distribution packages have this name convention: dcm-agent-&lt;distribution&gt;-&lt;version&gt;-&lt;architecture&gt;-&lt;agent-version&gt;.&lt;pkg type&gt;</p>
+<div class="last highlight-text"><div class="highlight"><pre>Where:
+        &lt;distribution&gt;   is the linux distribution name (e.g. centos, debian, rhel, or ubuntu)
+        &lt;version&gt;        is the linux distribution version (e.g. 12.04)
+        &lt;architecture&gt;   is the linux distribution architecture (e.g. i386, x86_64 or amd64)
+        &lt;version&gt;        is the python agent version (e.g. latest, 0.9.11, 0.9.12, etc.)
+        &lt;pkg type&gt;       is the linux distribution package type (e.g. deb or rpm)
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -106,13 +129,14 @@ DCM_AGENT_FORCE_DISTRO_VERSION=       Instead of detecting the distribution vers
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html">Interactive install syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_install_syntax.html#non-interactive-install-syntax">Non-interactive install syntax</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Environment Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_install.html">Interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="noninteractive_install.html">Non-interactive Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Agent Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">Dell Cloud Manager Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_interactive_install.html">Interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_noninteractive_install.html">Non-interactive Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display_agent_information_from_console.html">DCM Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_config.html">agent.conf file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_log.html">agent.log file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_scripts.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_uninstall.html">Uninstalling the Agent</a></li>
 </ul>
 
@@ -128,7 +152,7 @@ DCM_AGENT_FORCE_DISTRO_VERSION=       Instead of detecting the distribution vers
           <a href="agent_install_syntax.html" title="Previous document">Interactive install syntax</a>
         </li>
         <li>
-          <a href="interactive_install.html" title="Next document">Interactive Install</a>
+          <a href="agent_interactive_install.html" title="Next document">Interactive Install</a>
           &rarr;
         </li>
     </ul>
@@ -139,7 +163,7 @@ DCM_AGENT_FORCE_DISTRO_VERSION=       Instead of detecting the distribution vers
     </ul>
   </nav>
   </div>
-  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 23, 2015.
+  <footer id="pagefooter">&copy; 2015, Dell Software. Updated Feb 24, 2015.
     
 
 

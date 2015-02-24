@@ -1,0 +1,415 @@
+root@vagrant:~# curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0/usr/bin/sudo
+100 11902  100 11902    0     0  58303      0 --:--:-- --:--:-- --:--:-- 91553
+determining architecture...
+done
+ubuntu-12.04-amd64
+Starting the installation process...
+Downloading DCM Agent from https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb
+This may take a few minutes.
+Downloading https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb ...
+Installing DCM Agent.
+Selecting previously unselected package dcm-agent.
+(Reading database ... 71954 files and directories currently installed.)
+Unpacking dcm-agent (from dcm-agent-ubuntu-12.04-amd64.deb) ...
+Setting up dcm-agent (0.9.12+20150126020732-1) ...
+Creating user and group...
+id: dcm: No such user
+Done.
+Adding user to sudoers...
+Done.
+Attempting to install startup scripts...
+Done.
+Create the configuration file
+Using CloudStack
+Get metadata es:dmcm-launch-id
+Running without the job runner process
+Metadata value of es:dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Get OpenStack metadata uuid
+Attempting to get metadata at http://169.254.169.254/openstack/2012-08-10/meta_data.json
+Failed to get the OpenStack metadata
+Traceback (most recent call last):
+  File "/opt/dcm-agent/embedded/agentve/lib/python2.7/site-packages/dcm_agent-0.9.12_548c08f2dba86ad7703c9d54669c481d5aa86750-py2.7.egg/dcm/agent/cloudmetadata.py", line 281, in get_cloud_metadata
+    jdict = json.loads(json_data)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+Script location /dcm/bin/getDhcpAddress
+Get metadata instance-id
+Attempting to get metadata at http://169.254.169.254/latest/meta-data/instance-id
+Metadata value of instance-id is None
+Get instance ID called
+Instance ID is None
+Get metadata instance/attributes/es-dmcm-launch-id
+Attempting to get metadata at http://metadata.google.internal/computeMetadata/v1/instance/attributes/es-dmcm-launch-id
+Metadata value of instance/attributes/es-dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+Done
+=======================================================
+The installation of the DCM Agent has completed.
+To start the agent, run the following command.
+To configure the agent run /dcm/bin/dcm-configure.sh -i -r /dcm/etc/agent.conf
+/etc/init.d/dcm-agent start
+=======================================================
+Installing chef-client.
+Downloading Chef  for ubuntu...
+downloading https://www.opscode.com/chef/metadata?v=&prerelease=false&nightlies=false&p=ubuntu&pv=12.04&m=x86_64
+  to file /tmp/install.sh.2674/metadata.txt
+trying wget...
+url https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_12.0.3-1_amd64.deb
+md5 e849cf61d3e3fd37224c11f9902aa536
+sha256  a8e9c78cc9b9a17a32b9b4ae1650b8b6454b4f0abd611048d099a659ca5de28f
+downloaded metadata file looks valid...
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_12.0.3-1_amd64.deb
+  to file /tmp/install.sh.2674/chef_12.0.3-1_amd64.deb
+trying wget...
+Comparing checksum with sha256sum...
+Installing Chef
+installing with dpkg...
+(Reading database ... 83943 files and directories currently installed.)
+Preparing to replace chef 12.0.3-1 (using .../chef_12.0.3-1_amd64.deb) ...
+Unpacking replacement chef ...
+Setting up chef (12.0.3-1) ...
+Thank you for installing Chef!
+Done.
+/opt/dcm-agent/embedded/bin/dcm-agent-configure -c OpenStack --chef-client -u wss://66.57.3.53/agentManager
+usage: dcm-agent-configure [-h] [--cloud {Amazon, etc...}] [--url URL]
+                           [--verbose] [--interactive] [--base-path BASE_PATH]
+                           [--mount-point MOUNT_PATH] [--on-boot]
+                           [--reload-conf RELOAD] [--temp-path TEMP_PATH]
+                           [--user USER] [--connection-type CON_TYPE]
+                           [--logfile LOGFILE] [--loglevel LOGLEVEL]
+dcm-agent-configure: error: unrecognized arguments: --chef-client
+To start the agent now please run:
+ /etc/init.d/dcm-agent start
+root@vagrant:~# clear
+root@vagrant:~# curl -k http://s3.amazonaws.com/dcmagentunstable/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0determining architecture...
+done
+ubuntu-12.04-amd64
+100  9933  100  9933    0     0  43119      0 --:--:-- --:--:-- --:--:-- 79464
+Starting the installation process...
+Downloading DCM Agent from https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb
+This may take a few minutes.
+Downloading https://s3.amazonaws.com/dcmagentunstable/dcm-agent-ubuntu-12.04-amd64.deb ...
+Installing DCM Agent.
+(Reading database ... 83943 files and directories currently installed.)
+Preparing to replace dcm-agent 0.9.12+20150126020732-1 (using dcm-agent-ubuntu-12.04-amd64.deb) ...
+Unpacking replacement dcm-agent ...
+dcm-agent has been uninstalled!
+Setting up dcm-agent (0.9.12+20150126020732-1) ...
+Creating user and group...
+1000
+Done.
+Adding user to sudoers...
+Done.
+Attempting to install startup scripts...
+Done.
+Create the configuration file
+Using CloudStack
+Get metadata es:dmcm-launch-id
+Running without the job runner process
+Metadata value of es:dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Get OpenStack metadata uuid
+Attempting to get metadata at http://169.254.169.254/openstack/2012-08-10/meta_data.json
+Failed to get the OpenStack metadata
+Traceback (most recent call last):
+  File "/opt/dcm-agent/embedded/agentve/lib/python2.7/site-packages/dcm_agent-0.9.12_548c08f2dba86ad7703c9d54669c481d5aa86750-py2.7.egg/dcm/agent/cloudmetadata.py", line 281, in get_cloud_metadata
+    jdict = json.loads(json_data)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+Script location /dcm/bin/getDhcpAddress
+Get metadata instance-id
+Attempting to get metadata at http://169.254.169.254/latest/meta-data/instance-id
+Metadata value of instance-id is None
+Get instance ID called
+Instance ID is None
+Get metadata instance/attributes/es-dmcm-launch-id
+Attempting to get metadata at http://metadata.google.internal/computeMetadata/v1/instance/attributes/es-dmcm-launch-id
+Metadata value of instance/attributes/es-dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+Done
+=======================================================
+The installation of the DCM Agent has completed.
+To start the agent, run the following command.
+To configure the agent run /dcm/bin/dcm-configure.sh -i -r /dcm/etc/agent.conf
+/etc/init.d/dcm-agent start
+=======================================================
+/opt/dcm-agent/embedded/bin/dcm-agent-configure -c OpenStack --chef-client -u wss://66.57.3.53/agentManager
+usage: dcm-agent-configure [-h] [--cloud {Amazon, etc...}] [--url URL]
+                           [--verbose] [--interactive] [--base-path BASE_PATH]
+                           [--mount-point MOUNT_PATH] [--on-boot]
+                           [--reload-conf RELOAD] [--temp-path TEMP_PATH]
+                           [--user USER] [--connection-type CON_TYPE]
+                           [--logfile LOGFILE] [--loglevel LOGLEVEL]
+dcm-agent-configure: error: unrecognized arguments: --chef-client
+To start the agent now please run:
+ /etc/init.d/dcm-agent start
+root@vagrant:~# curl -k http://s3.amazonaws.com/dcmagentunstable/installer.sh | bash -s - -"/opt/dcm-agent/embedded/bin/dcm-agent-configure^Chef-client -u wss://66.57.3.53/agentManager
+root@vagrant:~# clear
+root@vagrant:~# remove_agent.sh
+ * Stopping the dcm-agent                                                                                                                                                                               start-stop-daemon: warning: failed to kill 2856: No such process
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be REMOVED:
+  dcm-agent
+0 upgraded, 0 newly installed, 1 to remove and 2 not upgraded.
+After this operation, 141 MB disk space will be freed.
+(Reading database ... 83943 files and directories currently installed.)
+Removing dcm-agent ...
+dcm-agent has been uninstalled!
+root@vagrant:~# export AGENT_BASE_URL=https://s3.amazonaws.com/dcmagentnightly
+root@vagrant:~# clear
+root@vagrant:~# curl -k http://s3.amazonaws.com/dcmagentunstable/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9933  100  9933    0     0  49678      0 --:--:-- --:--:-- --:--:--   97k
+determining architecture...
+done
+ubuntu-12.04-amd64
+Starting the installation process...
+Downloading DCM Agent from https://s3.amazonaws.com/dcmagentnightly/dcm-agent-ubuntu-12.04-amd64.deb
+This may take a few minutes.
+Downloading https://s3.amazonaws.com/dcmagentnightly/dcm-agent-ubuntu-12.04-amd64.deb ...
+Installing DCM Agent.
+Selecting previously unselected package dcm-agent.
+(Reading database ... 71954 files and directories currently installed.)
+Unpacking dcm-agent (from dcm-agent-ubuntu-12.04-amd64.deb) ...
+Setting up dcm-agent (0.9.12+20150224001000.git.13.fc02010-1) ...
+Creating user and group...
+id: dcm: No such user
+Done.
+Adding user to sudoers...
+Done.
+Attempting to install startup scripts...
+Done.
+Create the configuration file
+Using CloudStack
+Get metadata es:dmcm-launch-id
+Running without the job runner process
+Metadata value of es:dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Get OpenStack metadata uuid
+Attempting to get metadata at http://169.254.169.254/openstack/2012-08-10/meta_data.json
+Failed to get the OpenStack metadata
+Traceback (most recent call last):
+  File "/opt/dcm-agent/embedded/agentve/lib/python2.7/site-packages/dcm_agent-0.9.12_fc020109bb9203cd557dee54758894dcbf37df12-py2.7.egg/dcm/agent/cloudmetadata.py", line 281, in get_cloud_metadata
+    jdict = json.loads(json_data)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+Script location /dcm/bin/getDhcpAddress
+Get metadata instance-id
+Attempting to get metadata at http://169.254.169.254/latest/meta-data/instance-id
+Metadata value of instance-id is None
+Get instance ID called
+Instance ID is None
+Get metadata instance/attributes/es-dmcm-launch-id
+Attempting to get metadata at http://metadata.google.internal/computeMetadata/v1/instance/attributes/es-dmcm-launch-id
+Metadata value of instance/attributes/es-dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+Done
+=======================================================
+The installation of the DCM Agent has completed.
+To start the agent, run the following command.
+To configure the agent run /dcm/bin/dcm-configure.sh -i -r /dcm/etc/agent.conf
+/etc/init.d/dcm-agent start
+=======================================================
+/opt/dcm-agent/embedded/bin/dcm-agent-configure -c OpenStack --chef-client -u wss://66.57.3.53/agentManager
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+To start the agent now please run:
+ /etc/init.d/dcm-agent start
+ * Starting the dcm-agent                                                                                                                                                                               root@vagrant:~# remove_agent.sh
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be REMOVED:
+  dcm-agent
+0 upgraded, 0 newly installed, 1 to remove and 2 not upgraded.
+After this operation, 142 MB disk space will be freed.
+(Reading database ... 83943 files and directories currently installed.)
+Removing dcm-agent ...
+dcm-agent has been uninstalled!
+root@vagrant:~# clear
+root@vagrant:~# curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 11902  100 11902    0     0  66909      0 --:--:-- --:--:-- --:--:--  113k
+/usr/bin/sudo
+determining architecture...
+done
+ubuntu-12.04-amd64
+Starting the installation process...
+Downloading DCM Agent from https://s3.amazonaws.com/dcmagentnightly/dcm-agent-ubuntu-12.04-amd64.deb
+This may take a few minutes.
+Downloading https://s3.amazonaws.com/dcmagentnightly/dcm-agent-ubuntu-12.04-amd64.deb ...
+Installing DCM Agent.
+Selecting previously unselected package dcm-agent.
+(Reading database ... 71954 files and directories currently installed.)
+Unpacking dcm-agent (from dcm-agent-ubuntu-12.04-amd64.deb) ...
+Setting up dcm-agent (0.9.12+20150224001000.git.13.fc02010-1) ...
+Creating user and group...
+id: dcm: No such user
+Done.
+Adding user to sudoers...
+Done.
+Attempting to install startup scripts...
+Done.
+Create the configuration file
+Using CloudStack
+Get metadata es:dmcm-launch-id
+Running without the job runner process
+Metadata value of es:dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Get OpenStack metadata uuid
+Attempting to get metadata at http://169.254.169.254/openstack/2012-08-10/meta_data.json
+Failed to get the OpenStack metadata
+Traceback (most recent call last):
+  File "/opt/dcm-agent/embedded/agentve/lib/python2.7/site-packages/dcm_agent-0.9.12_fc020109bb9203cd557dee54758894dcbf37df12-py2.7.egg/dcm/agent/cloudmetadata.py", line 281, in get_cloud_metadata
+    jdict = json.loads(json_data)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/opt/dcm-agent/embedded/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+Script location /dcm/bin/getDhcpAddress
+Get metadata instance-id
+Attempting to get metadata at http://169.254.169.254/latest/meta-data/instance-id
+Metadata value of instance-id is None
+Get instance ID called
+Instance ID is None
+Get metadata instance/attributes/es-dmcm-launch-id
+Attempting to get metadata at http://metadata.google.internal/computeMetadata/v1/instance/attributes/es-dmcm-launch-id
+Metadata value of instance/attributes/es-dmcm-launch-id is None
+Get instance ID called
+Instance ID is None
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+Done
+=======================================================
+The installation of the DCM Agent has completed.
+To start the agent, run the following command.
+To configure the agent run /dcm/bin/dcm-configure.sh -i -r /dcm/etc/agent.conf
+/etc/init.d/dcm-agent start
+=======================================================
+Installing chef-client.
+Downloading Chef  for ubuntu...
+downloading https://www.opscode.com/chef/metadata?v=&prerelease=false&nightlies=false&p=ubuntu&pv=12.04&m=x86_64
+  to file /tmp/install.sh.3131/metadata.txt
+trying wget...
+url https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_12.0.3-1_amd64.deb
+md5 e849cf61d3e3fd37224c11f9902aa536
+sha256  a8e9c78cc9b9a17a32b9b4ae1650b8b6454b4f0abd611048d099a659ca5de28f
+downloaded metadata file looks valid...
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_12.0.3-1_amd64.deb
+  to file /tmp/install.sh.3131/chef_12.0.3-1_amd64.deb
+trying wget...
+Comparing checksum with sha256sum...
+Installing Chef
+installing with dpkg...
+(Reading database ... 83943 files and directories currently installed.)
+Preparing to replace chef 12.0.3-1 (using .../chef_12.0.3-1_amd64.deb) ...
+Unpacking replacement chef ...
+Setting up chef (12.0.3-1) ...
+Thank you for installing Chef!
+Done.
+/opt/dcm-agent/embedded/bin/dcm-agent-configure -c OpenStack --chef-client -u wss://66.57.3.53/agentManager
+Making the needed directories...
+    /dcm
+    /dcm/bin
+    /dcm/bin
+    /dcm/custom
+    /dcm/custom/bin
+    /dcm/etc
+    /dcm/logs
+    /dcm/home
+    /dcm/cfg
+    /tmp
+...Done.
+Changing ownership to dcm:dcm
+To start the agent now please run:
+ /etc/init.d/dcm-agent start
+ * Starting the dcm-agent                                                                                                                                                                               root@vagrant:~#
