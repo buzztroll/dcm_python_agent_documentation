@@ -7,14 +7,14 @@
 Non-interactive Install
 -----------------------
 
-The following curl command will install the latest python agent and configure the agent to communicate to this agentManager server: **wss://66.57.3.53/agentManager**. 
+The following curl command will install the latest dcm-agent and configure it to communicate to this agentManager server: **wss://66.57.3.53/agentManager**. 
 For most agent installs in On-Premise Dell Cloud Manager server environments that is the only required option. The agent will also be started after the install finishes. 
 
-  :samp:`curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -u wss://66.57.3.53/agentManager  && service dcm-agent start`
+  :samp:`curl -k https://es-pyagent.s3.amazonaws.com/installer.sh | bash -s - -u wss://66.57.3.53/agentManager  && service dcm-agent start`
 
   .. code-block:: text
 
-    curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -u wss://66.57.3.53/agentManager
+    curl -k https://es-pyagent.s3.amazonaws.com/installer.sh | bash -s - -u wss://66.57.3.53/agentManager
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100 10038  100 10038    0     0   243k      0 --:--:-- --:--:-- --:--:--  280k
@@ -35,11 +35,11 @@ For most agent installs in On-Premise Dell Cloud Manager server environments tha
 The following curl command will install the latest python agent, configure it for the OpenStack cloud, install the latest Chef client, and configure the agent to communicate to
 this agentManager server: **wss://66.57.3.53/agentManager**. The agent will also be started after the install finishes.
 
-  :samp:`curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start`
+  :samp:`curl -k https://es-pyagent.s3.amazonaws.com/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start`
 
   .. code-block:: text
 
-    curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
+    curl -k https://es-pyagent.s3.amazonaws.com/installer.sh | bash -s - -c OpenStack --chef-client -u wss://66.57.3.53/agentManager && service dcm-agent start
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
     100 11902  100 11902    0     0  58303      0 --:--:-- --:--:-- --:--:-- 91553

@@ -7,7 +7,7 @@
 Uninstalling the Agent
 ----------------------
 
-Perform the following 4 steps below with **root** authority to uninstall the python agent:
+Perform the following 4 steps below with **root** authority to uninstall the dcm-agent:
 
 1. Stop the agent
 

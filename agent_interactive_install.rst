@@ -7,14 +7,14 @@
 Interactive Install
 -------------------
 
-Run the following command below with **root** authority to install the python agent in interactive mode.
+Run the following command below with **root** authority to install the dcm-agent in interactive mode.
 
-  :samp:`bash <( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )`
+  :samp:`bash <( curl -k  https://es-pyagent.s3.amazonaws.com/installer.sh )`
 
   .. code-block:: text
     :emphasize-lines: 19,21,35-36,45
 
-    root@ip-10-29-59-177:~# bash <( curl -k http://s3.amazonaws.com/dcmagentnightly/installer.sh )
+    root@ip-10-29-59-177:~# bash <( curl -k  https://es-pyagent.s3.amazonaws.com/installer.sh )
 
     *** some display output from the install has been omitted in order to reduce clutter ***
 

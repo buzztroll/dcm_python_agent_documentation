@@ -19,7 +19,7 @@ These optional environment variables can be set prior to running the agent insta
                                     Example: export AGENT_LOCAL_PACKAGE="/tmp/dcm-agent-ubuntu-14.04-amd64-latest.deb"
 
   AGENT_BASE_URL=<url>              This setting will direct the installer to use the specified URL as the base URL for downloading the agent distribution package.
-                                    By default the agent installer downloads the agent distribution packages from https://dcmagentnightly.s3.amazonaws.com
+                                    By default the agent installer downloads the agent distribution packages from https://es-pyagent.s3.amazonaws.com
 
                                     To direct the installer to download the agent distribution package from the unstable agent repository specify:    
                                     export AGENT_BASE_URL="https://s3.amazonaws.com/dcmagentunstable"
@@ -44,5 +44,5 @@ These optional environment variables can be set prior to running the agent insta
             <distribution>   is the linux distribution name (e.g. centos, debian, rhel, or ubuntu)
             <version>        is the linux distribution version (e.g. 12.04)
             <architecture>   is the linux distribution architecture (e.g. i386, x86_64 or amd64)
-            <version>        is the python agent version (e.g. latest, 0.9.11, 0.9.12, etc.)
+            <version>        is the dcm-agent version (e.g. latest, 0.9.11, 0.9.12, etc.)
             <pkg type>       is the linux distribution package type (e.g. deb or rpm)
